@@ -1,80 +1,276 @@
+:root {
+	--dark-bg-color: #000;
+	--light-bg-color: #fff;
+
+	--dark-grey-line-color: #aaa;
+	--light-grey-line-color: #666;
+	
+	--dark-accent-color: #5cabab;
+	--light-accent-color: #a35454;
+	
+	--dark-text-color: white;
+	--light-text-color: black;
+}
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: Arial, sans-serif;
+	color: var(--dark-text-color);
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+   font-family: Arial, sans-serif;
+	background-color: black;
 }
 
 header {
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    text-align: center;
+   background-color: black;
+	color: var(--dark-text-color);
+   padding: 20px;
+	padding-bottom: 0em;
+	height: 4.85em;
+   text-align: center;
+	border-bottom: 0.1rem solid #aaa;
 }
 
-header h1 {
-    font-size: 2.5em;
+nav {
+	padding-top: 0.3em;
+	padding-right: 7em;
+	font-family: Arial, sans-serif;
+	color: var(--dark-text-color);
+	margin-bottom: 0px;
+	}
+   .navbar {
+		list-style-type: none;
+   	margin-top: 10px;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+   	}
+		.logo {
+			color: #5cabab;
+   		text-decoration: none;
+			font-weight: bold;
+			background-color: #000;
+			width: 12.5em;
+
+			border: 0.1rem solid #aaa; 
+			padding: 0.3em;
+			margin-right: 2em;
+			margin-left: 2em;
+			font-size: 1.61em;
+		}
+		a {
+    		text-decoration: none;
+    		font-weight: bold;
+			background-color: #000;
+			width: 7.3em;
+			color: var(--dark-text-color);
+
+			border: 0.1rem solid #aaa; 
+			padding: 0.3em;
+			font-size: 1.1em;
+		}
 }
 
-nav ul {
-    list-style-type: none;
-    margin-top: 10px;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 15px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
 
 section {
-    padding: 40px 20px;
-    text-align: center;
+	margin-top: 0em;
+	padding: 2.5em 1.2em;
+	text-align: center;
+	background-color: black;
 }
+
+.game-preview {
+   padding: 0px 0px;
+	margin-top: 0px;
+	background: black url("pictures/BackgroundSchizophrenia.jpeg") no-repeat fixed;
+	background-position: center top;
+	background-size: contain;
+	height: 80em;
+	.game-title {
+		padding-top: 5em;
+		font-family: "Chalkduster", cursive;
+		color: var(--dark-text-color);
+		font-size: 5em;
+		text-align: center;
+	}
+	.game-subtitel {
+		padding-top: 0.5em;
+		font-family: "Chalkduster", cursive;
+		color: var(--dark-text-color);
+		font-size: 1.7em;
+		text-align: center;
+	}
+}
+
+
+/*--Mitwirkende--*/
 
 #mitwirkende .team {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin-top: 2em;
+	margin-bottom: 10em;
 }
-
+	
 #mitwirkende .person {
-    margin: 15px;
-    border: 1px solid #ccc;
-    padding: 20px;
-    background-color: #fff;
-    width: 150px;
+   display: grid;
+	place-items: center;
+	margin: 2em;
 }
 
-#patchnotes .patch {
-    margin-bottom: 20px;
-    background-color: #fff;
-    padding: 20px;
-    border: 1px solid #ccc;
+#mitwirkende .name {
+   color: #5cabab;
+   text-decoration: none;
+	font-weight: bold;
+	background-color: #000;
+	width: 12em;
+	text-align: center;
+
+	border: 0.1rem solid #aaa; 
+	padding: 0.3em;
+	margin-right: 2em;
+	margin-left: 2em;
+	font-size: 1.61em;
+	z-index: 69;
+}
+	
+#mitwirkende .job {
+	color: var(--dark-text-color);
+   text-decoration: none;
+	background-color: #000;
+	width: 18em;
+	text-align: center;
+
+	border: 0.1rem solid #aaa; 
+	padding: 0.3em;
+	padding-top: 2em;
+	padding-bottom: 2em;
+	margin-right: 1.8em;
+	margin-left: 1.8em;
+	margin-bottom: 3em;
+	font-size: 1.3em;
+	
+	margin: auto;
+	position: relative;
+	top: -1em;
+}
+
+
+/*--Patchnotes--*/
+
+#patchnotes {
+	margin-bottom: 5em;
+	padding-bottom: 5em;
+}
+
+.patch-titel{
+	color: #5cabab;
+   text-decoration: none;
+	font-weight: bold;
+	background-color: #000;
+	width: 12em;
+	text-align: center;
+
+	border: 0.1rem solid #aaa; 
+	padding: 0.3em;
+	margin-right: 2em;
+	margin-left: 5em;
+	font-size: 1.61em;
+}
+
+.patch-description{
+	color: var(--dark-text-color);
+   text-decoration: none;
+	background-color: #000;
+	width: 85%;
+	text-align: left;
+
+	border: 0.1rem solid #aaa;
+	padding: 1.5em;
+	padding-top: 2em;
+	padding-bottom: 2em;
+	margin-right: 2em;
+	margin-left: 2em;
+	margin-bottom: 3em;
+	font-size: 1.3em;
+	
+	margin: auto;
+	position: relative;
+	top: -1em;
+	z-index: -4;
+}
+
+.patch {
+	margin: 2em 0em;
+}
+
+.active-patch .patch-description {
+	border-color: #5cabab; 
+}
+
+
+.download-button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.3em;
 }
 
 #download .download-btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #333;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
+	display: inline-block;
+	align-self: center;
+   padding: 0.2em 1.2em;
+	margin: 1em;
+   background-color: var(--dark-accent-color);
+   color: var(--dark-text-color);
+	border-color: #ff000000;
+   text-decoration: none;
+	align: center;
+	font-size: 2em;
 }
 
 footer {
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    text-align: center;
+   background-color: black;
+   color: var(--dark-text-color);
+   padding: 20px;
+   text-align: center;
 }
+
+
+
+
+
+
+
+.greyline {
+	background-color: black;
+	color: black;
+   padding: 0em;
+	margin-top: 3em; 
+	height: 0.1em;
+   text-align: center;
+	border-bottom: 0.1rem solid #aaa; 
+}
+
+.titel {
+    font-family: Arial, sans-serif;
+    color: #5cabab;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: #000;
+    border: 0.1rem solid #aaa;
+    padding: 0.3em;
+    font-size: 2.3em;
+    text-align: center;
+    width: 40%;
+	 margin: 0 auto;
+    position: relative;
+    top: -0.65em;
+}
+
+
