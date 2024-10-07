@@ -73,6 +73,9 @@ nav {
 			padding: 0.3em;
 			font-size: 1.1em;
 		}
+		.zzs-btn {
+			width: 10em;
+		}
 }
 
 
@@ -86,7 +89,7 @@ section {
 .game-preview {
    padding: 0px 0px;
 	margin-top: 0px;
-	background: black url("BackgroundSchizophrenia.jpeg") no-repeat fixed;
+	background: black url("pictures/BackgroundSchizophrenia.jpeg") no-repeat fixed;
 	background-position: center top;
 	background-size: contain;
 	height: 80em;
@@ -104,6 +107,11 @@ section {
 		font-size: 1.7em;
 		text-align: center;
 	}
+}
+
+.patchnotes-site {
+	margin-top: 8em;
+	margin-bottom: 10em;
 }
 
 
@@ -213,6 +221,21 @@ section {
 	border-color: #5cabab; 
 }
 
+.patchnotes-btn {
+	color: var(--dark-text-color);
+   text-decoration: none;
+	background-color: #000;
+	width: 35%;
+	text-align: left;
+	border-color: #00000000;
+
+	margin: auto;
+	margin-right: 2em;
+	margin-left: 10%;
+	margin-bottom: 3em;
+	font-size: 1.3em;
+}
+
 
 .download-button {
 	display: flex;
@@ -228,7 +251,7 @@ section {
 	margin: 1em;
    background-color: var(--dark-accent-color);
    color: var(--dark-text-color);
-	border-color: #ff000000;
+	border-color: var(--dark-grey-line-color);
    text-decoration: none;
 	align: center;
 	font-size: 2em;
@@ -254,7 +277,7 @@ footer {
 	margin-top: 3em; 
 	height: 0.1em;
    text-align: center;
-	border-bottom: 0.1rem solid #aaa; 
+	border-bottom: 0.1rem solid var(--dark-grey-line-color); 
 }
 
 .titel {
