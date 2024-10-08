@@ -31,8 +31,7 @@ body {
 header {
    background-color: black;
 	color: var(--dark-text-color);
-   padding: 1.2em;
-	padding-bottom: 0em;
+   padding: 1.2em 0.4em;
 	height: 4.85em;
    text-align: center;
 	border-bottom: 0.1rem solid #aaa;
@@ -40,7 +39,7 @@ header {
 
 nav {
 	padding-top: 0.3em;
-	padding-right: 7em;
+	padding-right: 0.0em;
 	font-family: Arial, sans-serif;
 	color: var(--dark-text-color);
 	margin-bottom: 0em;
@@ -51,6 +50,8 @@ nav {
 		display: flex;
 		justify-content: space-evenly;
 		align-items: center;
+		margin-left: 0em;
+		margin-right: 0em;
    	}
 		.logo {
 			color: #5cabab;
@@ -61,8 +62,8 @@ nav {
 
 			border: 0.1rem solid #aaa; 
 			padding: 0.3em;
-			margin-right: 2em;
-			margin-left: 2em;
+			margin-right: 1em;
+			margin-left: 0em;
 			font-size: 1.61em;
 		}
 		a {
@@ -78,6 +79,11 @@ nav {
 		}
 		.zzs-btn {
 			width: 10em;
+		}
+		.admin-login {
+			height: 1.7em;
+			width: 2.1em;
+			align-content: center;
 		}
 }
 
@@ -296,4 +302,101 @@ footer {
 	 margin: 0 auto;
     position: relative;
     top: -0.65em;
+}
+
+
+.popup {
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%) scale(0);
+	position: fixed;
+	width: 50%;
+	height: 40%;
+	border: 0.1em solid #5cabab;
+	background-color: var(--dark-bg-color);
+	z-index: 200;
+	transition: 200ms ease-in-out;
+}
+
+.popup.active {
+	transform: translate(-50%, -50%) scale(1);
+}
+
+.popup-header {
+	padding: 0.0em 0em;
+	align-items: center;
+	margin-left: 0em;
+	height: 20%;
+	.popup-titel {
+		font-family: Arial, sans-serif;
+    	color: #5cabab;
+    	text-decoration: none;
+    	font-weight: bold;
+    	background-color: #000;
+    	border: 0.1rem solid #aaa;
+    	padding: 0.3em;
+    	font-size: 2.3em;
+    	text-align: center;
+    	width: 60%;
+	 	margin: 0em auto;
+    	position: relative;
+    	top: -0.65em;
+	}
+	.popup-close {
+		border: 0em solid #00000000;
+		right: 0;
+		background-color: #00000000;
+		font-size: 1.8em;
+		cursor: pointer;
+		text-align: center;
+		position: fixed;
+		top: 0.1em;
+		right: 0.4em;
+	}
+}
+
+.popup-body {
+	height: 80%;
+	color: var(--dark-text-color);
+   text-decoration: none;
+	font-size: 1.6em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.popup-form {
+	color: var(--dark-text-color);
+	width: 100%;
+	text-align: center;
+	span {
+		color: var(--dark-grey-line-color);
+	}
+}
+
+.popup-form-input {
+	border-radius: 0em;
+	border: 0.1rem solid var(--dark-accent-color);
+	width: 65%;
+	font-size: 1em;
+	background-color: var(--dark-bg-color);
+	padding-left: 2%;
+	margin-top: 1em;
+}
+
+.overlay{
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	position: fixed;
+	background-color: rgba(0, 0, 0, .6);
+	z-index: 150;
+	pointer-events: none;
+	opacity: 0;
+}
+
+.overlay.active {
+	opacity: 1;
+	pointer-events: all;	
 }
