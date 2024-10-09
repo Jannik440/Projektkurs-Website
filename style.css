@@ -78,7 +78,7 @@ nav {
 			border: 0.1rem solid #aaa; 
 			padding: 0.3em;
 			font-size: 1.1em;
-		} a: hover {
+		} a:hover {
 			color: var(--dark-accent-color); 
 			font-size: 1.3em;
 			text-decoration: none;
@@ -275,7 +275,7 @@ section {
 	margin-left: 10%;
 	margin-bottom: 3em;
 	font-size: 1.3em;
-} .patchnotes-btn: hover {
+} .patchnotes-btn:hover {
 	color: var(--dark-accent-color);
 	margin-left: 13%;
 	
