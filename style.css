@@ -21,6 +21,7 @@
    font-family: Arial, sans-serif;
 	color: var(--dark-text-color);
 	show: true;
+	transition: 200ms ease-in-out;
 }
 
 body {
@@ -47,7 +48,7 @@ nav {
 	}
    .navbar {
 		list-style-type: none;
-   	margin-top: 0.7em;
+   		margin-top: 0.7em;
 		display: flex;
 		justify-content: space-evenly;
 		align-items: center;
@@ -77,6 +78,9 @@ nav {
 			border: 0.1rem solid #aaa; 
 			padding: 0.3em;
 			font-size: 1.1em;
+		} a: hover {
+			color: var(--dark-accent-color); 
+			font-size: 1.3em;
 		}
 		.zzs-btn {
 			width: 10em;
@@ -87,12 +91,16 @@ nav {
 			align-content: center;
 			background-color: #000;
 			border: 0.1rem solid #aaa; 
+		} .admin-login: hover {
+			border: 0.1rem solid var(--dark-accent-color); 
 		}
 		.logout {
 			font-size: 0.8em;
 			font-weight: none;
 			width: 4em;
 			color: var(--dark-grey-line-color);
+		} .logout: hover {
+			color: var(--dark-accent-color);
 		}
 }
 
@@ -253,6 +261,9 @@ section {
 	margin-left: 10%;
 	margin-bottom: 3em;
 	font-size: 1.3em;
+} .patchnotes-btn: hover {
+	color: var(--dark-accent-color);
+	margin-left: 13%;
 }
 
 
@@ -268,11 +279,18 @@ section {
 	align-self: center;
    padding: 0.2em 1.2em;
 	margin: 1em;
-   background-color: var(--dark-accent-color);
+   background-color: var(--dark-bg-color);
    color: var(--dark-text-color);
-	border-color: var(--dark-grey-line-color);
+	border-color: var(--dark-accent-color);
    text-decoration: none;
 	align: center;
+	font-size: 1.4em;
+	transition: 200ms ease-in-out;
+	} .download-btn: hover {
+   padding: 0.2em 1em;
+	margin: 1.2em;
+   background-color: var(--dark-accent-color);
+	border-color: var(--dark-grey-line-color);
 	font-size: 2em;
 }
 
@@ -369,8 +387,9 @@ display: none;
 		right: 0.4em;
 		transition: 0.2s;
 	}
-	.close-button:hover {
+	.close:hover {
 		color: #5cabab;
+		font-size: 2em;
 	}
 
 
@@ -425,15 +444,22 @@ display: none;
 	transition: 200ms ease-in-out;
 }
 
+.submit-button:hover {
+	margin: 0.3em;
+	padding: 0.3em;
+   background-color: var(--dark-accent-color);
+	font-size: 0.9em;
+}
+
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Halbtransparenter schwarzer Hintergrund */
-  display: none; /* Standardmäßig verborgen */
-  z-index: 100; /* Stelle sicher, dass der Overlay über anderen Elementen liegt */
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 100;
 }
 
 .hidden {
