@@ -5,45 +5,70 @@
 	<meta name="viewport" content="width=1024">
 	<title>Projekt Kurs</title>
 	<link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@24,700,1,200"/>
-	<script src="script.js"></script>
+	
+	<link defer rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@24,700,1,-25&icon_names=login"/>
+	
+	<script defer src="script.js"></script>
 </head>
 <body>
  
     <!-- Header -->
-    <header>
-        <nav>
-    			<div class="navbar">
-				    <a class="logo">Projektkurs Informatik</a>
-                <a href="#mitwirkende">Mitwirkende</a>
-					<a href="#patchnotes">Patchnotes</a>
-					<a href="#download">Download</a>
-					<a href="https://github.com/Sneezy123/ProjektKursInfo">GitHub</a>
-					<a data-popup-target=".popup" class="material-symbols-sharp admin-login" style="color: #5cabab;">
-						admin_panel_settings
-					</a>
-            </div>
-        </nav>
-    </header>
+	<header>
+		<nav>
+			<div class="navbar admin-needed-to-hide">
+				<a class="logo">Projektkurs Informatik</a>
+				<a href="#mitwirkende">Mitwirkende</a>
+				<a href="#patchnotes">Patchnotes</a>
+				<a href="#download">Download</a>
+				<a href="https://github.com/Sneezy123/ProjektKursInfo">GitHub</a>
+				<span class="material-symbols-sharp admin-login button" onclick="togglePopup()">
+                login
+            </span>
+			</div>
+			<div class="navbar admin-needed-to-show hidden">
+				<a class="logo">Admin access</a>
+				<a href="#mitwirkende">Mitwirkende</a>
+				<a href="#patchnotes">Patchnotes</a>
+				<a href="#download">Download</a>
+				<a href="https://github.com/Sneezy123/ProjektKursInfo">GitHub</a>
+				<a class="logout" onclick="togglePopup()" >Log out</a>
+        </div>
+    </nav>
+</header>
 
-	<div class="popup" id="popup">
-		<div class="popup-header">
-			<div class="popup-titel">Login</div>
-			<button data-close-button="close-button" class="popup-close">&times;</button>
-		</div>
-		
-		<div class="popup-body">
-			<form class="popup-form">
-				<p>Benutzername: <span>admin</span></p>
-				<input class="popup-form-input" placeholder="Passwort" type="password"></input>
-			</form>
-		</div>
-	</div>
-	<div id="overlay" class="overlay"></div>
+
+
+<div id="overlay" class="overlay" onclick="togglePopup()"> </div>
+
+<div class="modal" id="modal">
+    <div class="modal-header admin-needed-to-hide">
+        <div class="modal-titel">Anmelden</div>
+        <button class="close" onclick="togglePopup()">&times;</button>
+    </div>
+    <div class="modal-body admin-needed-to-hide">
+        <form class="modal-form" onsubmit="return false;">
+            <p>Benutzername: <span>admin</span></p>
+            <input class="modal-form-input" id="admin-password" placeholder="Passwort" type="password">
+            <button class="button submit-button" id="login-button" onclick="checkPassword()">Anmelden</button>
+        </form>
+    </div>
+
+
+	<div class="modal-header admin-needed-to-show hidden">
+        <div class="modal-titel">Abmelden</div>
+        <button class="close" onclick="togglePopup()">&times;</button>
+    </div>
+    <div class="modal-body admin-needed-to-show hidden">
+        <form class="modal-form" onsubmit="return false;">
+            <p>Bist du sicher?</p>
+            <button class="button submit-button" id="logout-button" onclick="toggleAdminOff()">ja, Abmelden</button>
+        </form>
+    </div>
+</div>
 
 
 	<section class="game-preview">
-   	<h1 class="game-title">Schizophrenia</h1>
+   		<h1 class="game-title">Schizophrenia</h1>
 		<h2 class="game-subtitel">Voices in the Woods</h2>
 	</section>
 
@@ -155,6 +180,5 @@
     <footer>
         <p>©ProjektKursMSM</p>
     </footer>
-
 </body>
 </html>
