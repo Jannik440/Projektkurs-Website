@@ -271,7 +271,7 @@ section {
 .patchnotes-btn {
 	color: var(--dark-text-color);
    text-decoration: none;
-	background-color: red;
+	background-color: var(--dark-bg-color);
 	width: 35%;
 	text-align: left;
 	border-color: #00000000;
