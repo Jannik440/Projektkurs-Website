@@ -78,7 +78,7 @@ nav {
 			border: 0.1rem solid #aaa; 
 			padding: 0.3em;
 			font-size: 1.1em;
-		} a:hover {
+		} .hover:hover {
 			color: var(--dark-accent-color); 
 			font-size: 1.3em;
 			text-decoration: none;
@@ -88,7 +88,7 @@ nav {
 
 			border: 0.1rem solid #aaa; 
 			padding: 0.3em;
-		} .logo:hover {}
+		}
 		.zzs-btn {
 			width: 10em;
 		}
@@ -98,7 +98,7 @@ nav {
 			align-content: center;
 			background-color: #000;
 			border: 0.1rem solid #aaa; 
-		} .admin-login: hover {
+		} .admin-login:hover {
 			border: 0.1rem solid var(--dark-accent-color); 
 			height: 1.7em;
 			width: 2.1em;
@@ -275,18 +275,7 @@ section {
 	font-size: 1.3em;
 } .patchnotes-btn:hover {
 	color: var(--dark-accent-color);
-	margin-left: +3%;
-	
-	text-decoration: none;
-	background-color: #000;
-	width: 35%;
-	text-align: left;
-	border-color: #00000000;
-
-	margin: auto;
-	margin-right: 2em;
-	margin-bottom: 3em;
-	font-size: 1.3em;
+	width: 40%;
 }
 
 
@@ -308,20 +297,10 @@ section {
    text-decoration: none;
 	align: center;
 	font-size: 1.4em;
-	transition: 200ms ease-in-out;
 	} .download-btn:hover {
-   padding: 0.2em 1em;
-	margin: 1.2em;
+   
    background-color: var(--dark-accent-color);
-	border-color: var(--dark-grey-line-color);
-	font-size: 2em;
-	
-	display: inline-block;
-	align-self: center;
-   color: var(--dark-text-color);
-   text-decoration: none;
-	align: center;
-	transition: 200ms ease-in-out;
+	font-size: 2em;	
 }
 
 footer {
@@ -418,16 +397,6 @@ footer {
 	}
 	.close:hover {
 		color: #5cabab;
-		font-size: 2em;
-		
-		background-color: var(--dark-bg-color);
-		border-color: var(--dark-bg-color);
-		right: 0;
-		cursor: pointer;
-		text-align: center;
-		position: fixed;
-		top: 0.1em;
-		right: 0.4em;
 	}
 
 
@@ -482,14 +451,7 @@ footer {
 }
 
 .submit-button:hover {
-	margin: 0.3em;
-	padding: 0.3em;
-   background-color: var(--dark-accent-color);
-	font-size: 0.9em;
-	color: var(--dark-text-color);
-	border-color: var(--dark-grey-line-color);
-   text-decoration: none;
-	align: center;
+	background-color: var(--dark-accent-color);
 }
 
 .overlay {
