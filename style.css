@@ -67,6 +67,7 @@ nav {
 			margin-right: 1em;
 			margin-left: 0em;
 			font-size: 1.61em;
+			cursor: default;
 		} 
 		a {
     		text-decoration: none;
@@ -78,6 +79,7 @@ nav {
 			border: 0.1rem solid #aaa; 
 			padding: 0.3em;
 			font-size: 1.1em;
+			cursor: pointer;
 		} .hover:hover {
 			color: var(--dark-accent-color); 
 			font-size: 1.3em;
@@ -97,6 +99,7 @@ nav {
 			width: 2.1em;
 			align-content: center;
 			background-color: #000;
+			cursor: pointer;
 			border: 0.1rem solid #aaa; 
 		} .admin-login:hover {
 			border: 0.1rem solid var(--dark-accent-color); 
@@ -109,6 +112,7 @@ nav {
 			font-size: 0.8em;
 			font-weight: none;
 			width: 4em;
+			cursor: pointer;
 			color: var(--dark-grey-line-color);
 		} .logout:hover {
 			color: var(--dark-accent-color);
@@ -140,6 +144,7 @@ section {
 		color: var(--dark-text-color);
 		font-size: 5em;
 		text-align: center;
+		cursor: default;
 	}
 	.game-subtitel {
 		padding-top: 0.5em;
@@ -147,6 +152,7 @@ section {
 		color: var(--dark-text-color);
 		font-size: 1.7em;
 		text-align: center;
+		cursor: default;
 	}
 }
 
@@ -164,6 +170,7 @@ section {
 	flex-wrap: wrap;
 	margin-top: 2em;
 	margin-bottom: 10em;
+	cursor: default;
 }
 	
 #mitwirkende .person {
@@ -213,6 +220,7 @@ section {
 #patchnotes {
 	margin-bottom: 5em;
 	padding-bottom: 5em;
+	cursor: default;
 }
 
 .patch-titel{
@@ -263,7 +271,7 @@ section {
 .patchnotes-btn {
 	color: var(--dark-text-color);
    text-decoration: none;
-	background-color: #000;
+	background-color: red;
 	width: 35%;
 	text-align: left;
 	border-color: #00000000;
@@ -273,9 +281,10 @@ section {
 	margin-left: 10%;
 	margin-bottom: 3em;
 	font-size: 1.3em;
+	cursor: pointer;
 } .patchnotes-btn:hover {
 	color: var(--dark-accent-color);
-	width: 40%;
+	margin-left: 15%;
 }
 
 
@@ -284,6 +293,7 @@ section {
 	justify-content: center;
 	align-items: center;
 	font-size: 1.3em;
+	cursor: pointer;
 }
 
 #download .download-btn {
@@ -297,8 +307,8 @@ section {
    text-decoration: none;
 	align: center;
 	font-size: 1.4em;
+	cursor: pointer;
 	} .download-btn:hover {
-   
    background-color: var(--dark-accent-color);
 	font-size: 2em;	
 }
@@ -308,6 +318,7 @@ footer {
    color: var(--dark-text-color);
    padding: 1.3em;
    text-align: center;
+	cursor: default;
 }
 
 
