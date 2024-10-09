@@ -67,7 +67,7 @@ nav {
 			margin-right: 1em;
 			margin-left: 0em;
 			font-size: 1.61em;
-		}
+		} 
 		a {
     		text-decoration: none;
     		font-weight: bold;
@@ -88,7 +88,7 @@ nav {
 
 			border: 0.1rem solid #aaa; 
 			padding: 0.3em;
-		}
+		} .logo:hover {}
 		.zzs-btn {
 			width: 10em;
 		}
@@ -110,7 +110,7 @@ nav {
 			font-weight: none;
 			width: 4em;
 			color: var(--dark-grey-line-color);
-		} .logout: hover {
+		} .logout:hover {
 			color: var(--dark-accent-color);
 			font-size: 0.8em;
 			font-weight: none;
@@ -210,8 +210,6 @@ section {
 }
 
 
-/*--Patchnotes--*/
-
 #patchnotes {
 	margin-bottom: 5em;
 	padding-bottom: 5em;
@@ -277,7 +275,7 @@ section {
 	font-size: 1.3em;
 } .patchnotes-btn:hover {
 	color: var(--dark-accent-color);
-	margin-left: 13%;
+	margin-left: +3%;
 	
 	text-decoration: none;
 	background-color: #000;
@@ -311,7 +309,7 @@ section {
 	align: center;
 	font-size: 1.4em;
 	transition: 200ms ease-in-out;
-	} .download-btn: hover {
+	} .download-btn:hover {
    padding: 0.2em 1em;
 	margin: 1.2em;
    background-color: var(--dark-accent-color);
