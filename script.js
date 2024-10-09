@@ -1,46 +1,51 @@
-const openPopupButtons = document.querySelectorAll('[data-popup-target]')
-const closePopupButtons = document.querySelectorAll('[data-close-button]')
-const inputFromUser = document.getElementById('input-field')
-const overlay = document.getElementById('overlay')
+const correctPassword = "admin123";
 
-openPopupButtons.forEach(button => {
-	button.addEventListener('click', () => {
-		const popup = document.querySelector(button.dataset.popupTarget)
-		openPopup(popup)
-	})
-})
-
-closePopupButtons.forEach(button => {
-	button.addEventListener('click', () => {
-		const popup = button.closest('.popup')
-		closePopup(popup)
-	})
-})
-
-function openPopup(popup) {
-	if(popup == null) return
-	popup.classList.add('active')
-	overlay.classList.add('active')
+function togglePopup() {
+    const modal = document.getElementById("modal");
+    const overlay = document.getElementById("overlay");
+    modal.style.display = modal.style.display === "none" || modal.style.display === "" ? "block" : "none";
+    overlay.style.display = overlay.style.display === "none" || overlay.style.display === "" ? "block" : "none";
 }
 
-function closePopup(popup) {
-	if(popup == null) return
-	popup.classList.remove('active')
-	overlay.classList.remove('active')
+function checkPassword() {
+    const input = document.getElementById("admin-password").value;
+    if (input === correctPassword) {
+        document.querySelectorAll('.admin-needed-to-show').forEach(el => {
+            el.classList.remove('hidden');
+        });
+        
+        document.querySelectorAll('.admin-needed-to-hide').forEach(el => {
+            el.classList.add('hidden');
+        });
+
+        togglePopup();
+    } else {
+        alert("Falsches Passwort!"); 
+    }
 }
 
-overlay.addEventListener('click', () => {
-	const popup = document.querySelectorAll('.popup.active')
-	popup.forEach(popup => {
-		closePopup(popup)
-	})
-})
+function toggleAdminOff() {
+    document.querySelectorAll('.admin-needed-to-show').forEach(el => {
+        el.classList.add('hidden');
+    });
 
-inputFromUser.addEventListener('keydown', function (event){
-	if(event.keyCode === 13) {
-		const password = inputFromUser.value 
-		if(password === 'admin123') {
-			/* wenn passwort richig ist/
-		}
-	}
-})
+    document.querySelectorAll('.admin-needed-to-hide').forEach(el => {
+        el.classList.remove('hidden');
+    });
+    
+    alert("Admin-Modus wurde deaktiviert.");
+	 togglePopup(); 
+}
+
+function checkElementClasses(element) {
+    const classes = element.classList; 
+    return classes.contains('admin-needed-to-show') || classes.contains('admin-needed-to-hide');
+}
+
+// Event Listener für Enter-Taste
+document.getElementById("admin-password").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault(); 
+        checkPassword();
+    }
+});
