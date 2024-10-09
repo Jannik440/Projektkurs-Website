@@ -15,11 +15,12 @@
 }
 
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: Arial, sans-serif;
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: Arial, sans-serif;
 	color: var(--dark-text-color);
+	show: true;
 }
 
 body {
@@ -55,7 +56,7 @@ nav {
    	}
 		.logo {
 			color: #5cabab;
-   		text-decoration: none;
+   			text-decoration: none;
 			font-weight: bold;
 			background-color: #000;
 			width: 12.5em;
@@ -84,6 +85,14 @@ nav {
 			height: 1.7em;
 			width: 2.1em;
 			align-content: center;
+			background-color: #000;
+			border: 0.1rem solid #aaa; 
+		}
+		.logout {
+			font-size: 0.8em;
+			font-weight: none;
+			width: 4em;
+			color: var(--dark-grey-line-color);
 		}
 }
 
@@ -95,6 +104,8 @@ section {
 }
 
 .game-preview {
+	display: block;
+	transition: 200ms ease-in-out;
    padding: 0em 0em;
 	margin-top: 0em;
 	background: black url("https://i.imgur.com/47ZVFCm.jpeg") no-repeat fixed;
@@ -305,29 +316,32 @@ footer {
 }
 
 
-.popup {
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%) scale(0);
-	position: fixed;
-	width: 50%;
-	height: 40%;
-	border: 0.1em solid #5cabab;
-	background-color: var(--dark-bg-color);
-	z-index: 200;
-	transition: 200ms ease-in-out;
+
+
+.modal {
+  position: fixed;
+display: none;
+  top: 50%;  
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 400px;
+  max-width: 50%;
+  max-height: 40%;
+  border: 0.1em solid #5cabab;
+  background-color: var(--dark-bg-color);
+  z-index: 200;
+  transition: 200ms ease-in-out;
+
 }
 
-.popup.active {
-	transform: translate(-50%, -50%) scale(1);
-}
-
-.popup-header {
+.modal-header {
 	padding: 0.0em 0em;
 	align-items: center;
 	margin-left: 0em;
 	height: 20%;
-	.popup-titel {
+	}
+	.modal-titel {
 		font-family: Arial, sans-serif;
     	color: #5cabab;
     	text-decoration: none;
@@ -342,20 +356,25 @@ footer {
     	position: relative;
     	top: -0.65em;
 	}
-	.popup-close {
-		border: 0em solid #00000000;
+	.close {
+		background-color: var(--dark-bg-color);
+		border-color: var(--dark-bg-color);
 		right: 0;
-		background-color: #00000000;
 		font-size: 1.8em;
+		color: white;
 		cursor: pointer;
 		text-align: center;
 		position: fixed;
 		top: 0.1em;
 		right: 0.4em;
+		transition: 0.2s;
 	}
-}
+	.close-button:hover {
+		color: #5cabab;
+	}
 
-.popup-body {
+
+.modal-body {
 	height: 80%;
 	color: var(--dark-text-color);
    text-decoration: none;
@@ -365,7 +384,7 @@ footer {
 	align-items: center;
 }
 
-.popup-form {
+.modal-form {
 	color: var(--dark-text-color);
 	width: 100%;
 	text-align: center;
@@ -374,29 +393,50 @@ footer {
 	}
 }
 
-.popup-form-input {
+.modal-form-input {
 	border-radius: 0em;
+	border: 0.1rem solid white;
+	width: 45%;
+	font-size: 1em;
+	background-color: var(--dark-bg-color);
+	padding-left: 2%;
+	margin-top: 1em;
+	transition: 0.2s;
+}
+
+.modal-form-input:hover {
 	border: 0.1rem solid var(--dark-accent-color);
-	width: 65%;
+	width: 55%;
 	font-size: 1em;
 	background-color: var(--dark-bg-color);
 	padding-left: 2%;
 	margin-top: 1em;
 }
 
-.overlay{
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	position: fixed;
-	background-color: rgba(0, 0, 0, .6);
-	z-index: 150;
-	pointer-events: none;
-	opacity: 0;
+.submit-button {
+	margin: 0.5em;
+	padding: 0.4em;
+   background-color: var(--dark-bg-color);
+   color: var(--dark-text-color);
+	border-color: var(--dark-grey-line-color);
+   text-decoration: none;
+	align: center;
+	font-size: 0.7em;
+	transition: 200ms ease-in-out;
 }
 
-.overlay.active {
-	opacity: 1;
-	pointer-events: all;	
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Halbtransparenter schwarzer Hintergrund */
+  display: none; /* Standardmäßig verborgen */
+  z-index: 100; /* Stelle sicher, dass der Overlay über anderen Elementen liegt */
+}
+
+.hidden {
+	display: none;
+	transition: 200ms ease-in-out;
 }
