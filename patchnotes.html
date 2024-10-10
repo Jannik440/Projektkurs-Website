@@ -67,28 +67,23 @@
 </div>
 
 
-<div class="greyline"> </div>
-<h2 class="titel">Neue Patchnote</h2>
 
-
-<!-- Hier soll der Patchnote Requester sein -->
-
-<section id="patchnote-requester" class="patchnotes-site">
+<section id="patchnote-requester" class="patchnotes-site admin-needed-to-show hidden">
 	<div class="patch empty-patch">
 		<form id="patchnote-form">
 			<input class="patch-titel" type="text" id="version" name="version" placeholder="Version eingeben..."><br><br>
-			<textarea class="new-patch-description" id="description" name="description" rows="4" cols="50" placeholder="Änderungsdetails hier eingeben..." type="text"></textarea><br><br>
-			<button class="button submit-button" type="button" onclick="clearForm()">Clear</button>
-			<button class="button submit-button" type="button" onclick="submitPatchnote()">Request</button>
+			<textarea class="new-patch-description" id="description" name="description" rows="5" cols="50" placeholder="Änderungsdetails hier eingeben..." type="text"></textarea><br><br>
+			<button class="button submit-button request-button request" type="button" onclick="submitPatchnote()">Anfragen</button>
+			<button class="button submit-button request-button clear" type="button" onclick="clearForm()">Abbrechen</button>
 		</form>
 	</div>
 </section>
 
 
 
+<div class="greyline admin-needed-to-show hidden"> </div>
+<h2 class="titel admin-needed-to-show hidden">Patchnote-Verlauf</h2>
 
-
-    <!-- Patchnotes Section -->
     <section id="patchnotes" class="patchnotes-site">
         
 
@@ -505,7 +500,7 @@
 
 	<div class="greyline"> </div>
 
-    <!-- Download Section -->
+
     <section id="download">
         <h2 class="titel">Download</h2>
 			<div class="download-button">
@@ -516,7 +511,7 @@
 
 	<div class="greyline"> </div>
 
-    <!-- Footer -->
+
     <footer>
         <p>©ProjektKursMSM</p>
     </footer>
