@@ -235,6 +235,7 @@ section {
 	margin-right: 2em;
 	margin-left: 5em;
 	font-size: 1.61em;
+	z-index: 20;
 }
 
 .patch-description{
@@ -242,6 +243,7 @@ section {
    text-decoration: none;
 	background-color: #000;
 	width: 85%;
+	max-width: 1000px;
 	text-align: left;
 
 	border: 0.1rem solid #aaa;
@@ -266,6 +268,7 @@ section {
    text-decoration: none;
 	background-color: #000;
 	width: 85%;
+	max-width: 1000px;
 	text-align: left;
 
 	border: 0.1rem solid #aaa;
@@ -273,15 +276,16 @@ section {
 	padding: 1.5em;
 	padding-top: 2em;
 	padding-bottom: 2em;
-	margin-right: 2em;
-	margin-left: 2em;
-	margin-bottom: 3em;
+	margin-right: 1.5em;
+	margin-left: 3.5em;
+	margin-bottom: 0em;
 	font-size: 1.3em;
 	line-height: 1.2em;
+	align-self: center:
 	
 	margin: auto;
 	position: relative;
-	top: -1em;
+	top: 0em;
 	z-index: 0;
 
 }
@@ -308,7 +312,9 @@ section {
 	margin-bottom: 3em;
 	font-size: 1.3em;
 	cursor: pointer;
-} .patchnotes-btn:hover {
+} 
+
+.patchnotes-btn:hover {
 	color: var(--dark-accent-color);
 	margin-left: 11%;
 }
@@ -334,10 +340,12 @@ section {
 	align: center;
 	font-size: 1.4em;
 	cursor: pointer;
-	} .download-btn:hover {
+} 
+	
+.download-btn:hover {
    background-color: var(--dark-accent-color);
 	color: var(--dark-bg-color);
-	}
+}
 
 footer {
    background-color: black;
@@ -346,12 +354,6 @@ footer {
    text-align: center;
 	cursor: default;
 }
-
-
-
-
-
-
 
 .greyline {
 	background-color: black;
@@ -379,9 +381,6 @@ footer {
     top: -0.65em;
 }
 
-
-
-
 .modal {
   position: fixed;
   display: none;
@@ -396,7 +395,6 @@ footer {
   background-color: var(--dark-bg-color);
   z-index: 200;
   transition: 600ms ease-in-out;
-
 }
 
 .modal-header {
@@ -435,7 +433,6 @@ footer {
 	.close:hover {
 		color: #5cabab;
 	}
-
 
 .modal-body {
 	height: 80%;
@@ -488,10 +485,38 @@ input {
    text-decoration: none;
 	align: center;
 	font-size: 0.7em;
+	z-index: 20;
 }
 
 .submit-button:hover {
 	background-color: var(--dark-accent-color);
+}
+
+.request {
+	background-color: var(--dark-bg-color);
+   color: var(--dark-text-color);
+	border-color: var(--dark-grey-line-color);
+	margin-left: 55%;
+	font-size: 1.2em;
+	width: 8em;
+}
+
+.clear {
+	background-color: var(--dark-bg-color);
+   color: var(--dark-text-color);
+	border-color: var(--dark-grey-line-color);
+	margin-left: 2%;
+	min-margin-left: 0.5em;
+	font-size: 1.2em;
+	width: 8em;
+}
+
+.request:hover {
+	background-color: var(--dark-accent-color);
+}
+
+.clear:hover {
+	background-color: red;
 }
 
 .overlay {
