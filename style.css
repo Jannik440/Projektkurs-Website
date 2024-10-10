@@ -220,7 +220,6 @@ section {
 #patchnotes {
 	margin-bottom: 5em;
 	padding-bottom: 5em;
-	cursor: default;
 }
 
 .patch-titel{
@@ -246,6 +245,7 @@ section {
 	text-align: left;
 
 	border: 0.1rem solid #aaa;
+	border-radius: 0em;
 	padding: 1.5em;
 	padding-top: 2em;
 	padding-bottom: 2em;
@@ -253,11 +253,37 @@ section {
 	margin-left: 2em;
 	margin-bottom: 3em;
 	font-size: 1.3em;
+	line-height: 1.2em;
 	
 	margin: auto;
 	position: relative;
 	top: -1em;
 	z-index: -4;
+}
+
+.new-patch-description{
+	color: var(--dark-text-color);
+   text-decoration: none;
+	background-color: #000;
+	width: 85%;
+	text-align: left;
+
+	border: 0.1rem solid #aaa;
+	border-radius: 0em;
+	padding: 1.5em;
+	padding-top: 2em;
+	padding-bottom: 2em;
+	margin-right: 2em;
+	margin-left: 2em;
+	margin-bottom: 3em;
+	font-size: 1.3em;
+	line-height: 1.2em;
+	
+	margin: auto;
+	position: relative;
+	top: -1em;
+	z-index: 0;
+
 }
 
 .patch {
@@ -296,7 +322,7 @@ section {
 	cursor: pointer;
 }
 
-#download .download-btn {
+.download-btn {
 	display: inline-block;
 	align-self: center;
    padding: 0.2em 1.2em;
@@ -310,8 +336,8 @@ section {
 	cursor: pointer;
 	} .download-btn:hover {
    background-color: var(--dark-accent-color);
-	font-size: 2em;	
-}
+	color: var(--dark-bg-color);
+	}
 
 footer {
    background-color: black;
@@ -369,7 +395,7 @@ footer {
   border: 0.1em solid #5cabab;
   background-color: var(--dark-bg-color);
   z-index: 200;
-  transition: 200ms ease-in-out;
+  transition: 600ms ease-in-out;
 
 }
 
@@ -431,7 +457,6 @@ footer {
 }
 
 .modal-form-input {
-	border-radius: 0em;
 	border: 0.1rem solid white;
 	width: 45%;
 	font-size: 1em;
@@ -439,6 +464,10 @@ footer {
 	padding-left: 2%;
 	margin-top: 1em;
 	transition: 0.2s;
+}
+
+input {
+	border-radius: 0em;	
 }
 
 .modal-form-input:hover {
@@ -478,5 +507,4 @@ footer {
 
 .hidden {
 	display: none;
-	transition: 200ms ease-in-out;
 }
