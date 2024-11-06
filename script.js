@@ -1,5 +1,4 @@
 const correctPassword = "admin123";
-let admin = false;
 
 function togglePopup() {
 	const modal = document.getElementById("modal");
@@ -34,6 +33,7 @@ function checkPassword() {
 		});
 		
 	} else	{
+		localStorage.setItem("isLoggedIn", "false");
 		const modal = document.getElementById("modal");
 		modal.style.transition = "500ms ease";
 		modal.style.borderColor = "red";
@@ -58,8 +58,7 @@ function toggleAdminOff() {
 	});
 	
 	togglePopup(); 
-	admin = false;
-	setCookie("admin", admin, 7); // Admin-Cookie entfernen
+	localStorage.setItem("isLoggedIn", "false");
 }
 
 
@@ -101,5 +100,6 @@ function checkLoginStatus() {
 }
 
 window.onload = function() {
+	const isLoggedIn = localStorage.getItem("isLoggedIn");
 	checkLoginStatus();
 }
