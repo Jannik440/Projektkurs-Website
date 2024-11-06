@@ -11,6 +11,8 @@ function togglePopup() {
 function checkPassword() {
 	const input = document.getElementById("admin-password");
 	if (input.value === correctPassword) {
+		localStorage.setItem("isLoggedIn", "true");
+		
 		const modal = document.getElementById("modal");
 		modal.style.transition = "300ms ease";
 		modal.style.borderColor = "lime";
@@ -28,8 +30,6 @@ function checkPassword() {
 				});
 				
 				togglePopup();
-				admin = true;
-				setCookie("admin", admin, 7); // Admin-Cookie setzen
 			});
 		});
 		
@@ -49,7 +49,8 @@ function checkPassword() {
 
 function toggleAdminOff() {
 	document.querySelectorAll('.admin-needed-to-show').forEach(el => {
-		el.classList.add('hidden');
+	el.classList.add('hidden');
+	localStorage.setItem("isLoggedIn", "false");	
 	});
 
 	document.querySelectorAll('.admin-needed-to-hide').forEach(el => {
@@ -72,4 +73,33 @@ document.getElementById("admin-password").addEventListener("keypress", function(
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+
+function checkLoginStatus() {
+	const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+	if (isLoggedIn === "true") {
+			// Benutzer ist angemeldet
+		document.querySelectorAll('.admin-needed-to-show').forEach(el => {
+		el.classList.remove('hidden');
+		});
+        
+			document.querySelectorAll('.admin-needed-to-hide').forEach(el => {
+			el.classList.add('hidden');
+			});
+	} else {
+			// Benutzer ist nicht angemeldet
+			document.querySelectorAll('.admin-needed-to-show').forEach(el => {
+		el.classList.add('hidden');
+		});
+        
+			document.querySelectorAll('.admin-needed-to-hide').forEach(el => {
+			el.classList.remove('hidden');
+			});
+	}
+}
+
+window.onload = function() {
+	checkLoginStatus();
 }
