@@ -113,7 +113,6 @@ function setCookie(admin) {
   document.cookie = "admin = " + admin + ";" + expires + ";path=/";
 }
 
-// Beispiel:
 function checkCookies() {
 	if(admin)
 	{
@@ -130,3 +129,7 @@ function checkCookies() {
 				toggleAdminOff();
 			}
 }
+
+window.onload = function() {
+	checkCookies();
+	};
