@@ -15,46 +15,15 @@
     <!-- Header -->
 	<header>
 		<nav>
-			<div class="navbar admin-needed-to-hide">
+			<div class="navbar">
 				<a class="logo">Projektkurs Informatik</a>
 				<a href="#mitwirkende" class="hover">Mitwirkende</a>
 				<a href="#patchnotes" class="hover">Patchnotes</a>
 				<a href="#download" class="hover">Download</a>
 				<a href="https://github.com/Sneezy123/ProjektKursInfo" class="hover">GitHub</a>
 			</div>
-    </nav>
+	</nav>
 </header>
-
-
-
-<div id="overlay" class="overlay" onclick="togglePopup()"> </div>
-
-<div class="modal" id="modal">
-    <div class="modal-header admin-needed-to-hide">
-        <div class="modal-titel">Anmelden</div>
-        <button class="close" onclick="togglePopup()">&times;</button>
-    </div>
-    <div class="modal-body admin-needed-to-hide">
-        <form class="modal-form" onsubmit="return false;">
-            <p>Benutzername: <span>admin</span></p>
-            <input class="modal-form-input" id="admin-password" placeholder="Passwort" type="password">
-            <button class="button submit-button" id="login-button" onclick="checkPassword()">Anmelden</button>
-        </form>
-    </div>
-
-
-	<div class="modal-header admin-needed-to-show hidden">
-        <div class="modal-titel">Abmelden</div>
-        <button class="close" onclick="togglePopup()">&times;</button>
-    </div>
-    <div class="modal-body admin-needed-to-show hidden">
-        <form class="modal-form" onsubmit="return false;">
-            <p>Bist du sicher?</p>
-            <button class="button submit-button" id="logout-button" onclick="toggleAdminOff()">ja, Abmelden</button>
-        </form>
-    </div>
-</div>
-
 
 	<section class="game-preview">
    		<h1 class="game-title">Me without You</h1>
