@@ -100,3 +100,33 @@ function submitPatchnote() {
           alert('Bitte fülle alle Felder aus, bevor du die Patchnote absendest.');
     }
 }
+
+
+
+boolean admin = false;
+
+// Cookie setzen
+function setCookie(admin) {
+  const date = new Date();
+  date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); // Ablaufdatum
+  const expires = "expires=" + date.toUTCString();
+  document.cookie = "admin = " + admin + ";" + expires + ";path=/";
+}
+
+// Beispiel:
+function checkCookies() {
+	if(admin)
+	{
+			document.querySelectorAll('.admin-needed-to-show').forEach(el => {
+					el.classList.remove('hidden');
+				});
+        
+				document.querySelectorAll('.admin-needed-to-hide').forEach(el => {
+					el.classList.add('hidden');
+				});
+		}
+		else 
+		{
+				toggleAdminOff();
+			}
+}
