@@ -25,7 +25,8 @@ function checkPassword() {
 					el.classList.add('hidden');
 				});
 				
-				togglePopup(); 
+				togglePopup();
+				setCookie(true); 
 			});
 		});
 		
