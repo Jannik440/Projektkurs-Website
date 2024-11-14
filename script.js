@@ -99,6 +99,29 @@ function checkLoginStatus() {
 	}
 }
 
+function clearForm() {
+	// Setzt die Formularfelder zurück
+	document.getElementById('version').value = '';
+	document.getElementById('description').value = '';
+	}
+
+function submitPatchnote() {
+	// Holt die Daten aus dem Formular
+	const version = document.getElementById('version').value;
+	const description = document.getElementById('description').value;
+	if (version && description) {
+		//Erstellen des Mailto-Links
+		const email = 'msmprojektkursinfo@gmail.com';
+		const subject = `Neue Patchnote Versionanfrage (${version})`;
+		const body = `Version: ${version}\n\nBeschreibung:\n${description}`;
+		const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+		// Öffnet den Standard-Mailclient mit den Patchnote-Details
+		window.location.href = mailtoLink;
+	} else {
+		alert('Bitte fülle alle Felder aus, bevor du die Patchnote absendest.');
+	}
+}
+
 window.onload = function() {
 	const isLoggedIn = localStorage.getItem("isLoggedIn");
 	checkLoginStatus();
