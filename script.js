@@ -131,8 +131,18 @@ document.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
     loadingScreen.style.display = "none";
     content.style.display = "block";
-  }, 1000); // 1 Sekunde Verzögerung
+  }, 3000); // 3 Sekunde Verzögerung
 });
+
+window.onload = function () {
+  const loadingScreen = document.getElementById("loading-screen");
+  const content = document.getElementById("content");
+
+  setTimeout(function () {
+    loadingScreen.style.display = "none";
+    content.style.display = "block";
+  }, 3000); // Anpassbare Verzögerung
+};
 
 
 function sleep(ms) {
