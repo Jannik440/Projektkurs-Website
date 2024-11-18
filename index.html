@@ -10,7 +10,7 @@
 	
 	<script defer src="script.js"></script>
 </head>
-<body>
+<body onload="onloadPage()">
  
     <!-- Header -->
 	<header>
@@ -24,6 +24,10 @@
 			</div>
 	</nav>
 </header>
+
+  <div id="loading-screen">
+    <div class="spinner"></div>
+  </div>
 
 	<section class="game-preview">
    		<h1 class="game-title">Me without You</h1>
