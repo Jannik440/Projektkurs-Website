@@ -70,10 +70,6 @@ document.getElementById("admin-password").addEventListener("keypress", function(
 	}
 });
 
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
 
 function checkLoginStatus() {
 	const isLoggedIn = localStorage.getItem("isLoggedIn");
@@ -122,7 +118,23 @@ function submitPatchnote() {
 	}
 }
 
-window.onload = function() {
+function onloadPage() {
 	const isLoggedIn = localStorage.getItem("isLoggedIn");
 	checkLoginStatus();
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const loadingScreen = document.getElementById("loading-screen");
+  const content = document.getElementById("content");
+
+  // Warten und dann ausblenden
+  setTimeout(() => {
+    loadingScreen.style.display = "none";
+    content.style.display = "block";
+  }, 1000); // 1 Sekunde Verzögerung
+});
+
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
