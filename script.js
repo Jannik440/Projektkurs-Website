@@ -118,7 +118,7 @@ function submitPatchnote() {
 		// Öffnet den Standard-Mailclient mit den Patchnote-Details
 		window.location.href = mailtoLink;
 	} else {
-		alert('Bitte fülle alle Felder aus, bevor du die Patchnote absendest.');
+		alert('Bitte fülle alle Felder aus, bevor du die Patchnote absendest. Jannik braucht alle Infos um deinen Commit einzutragen.');
 	}
 }
 
