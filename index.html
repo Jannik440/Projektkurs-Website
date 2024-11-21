@@ -1,177 +1,160 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=1024">
-	<title>Projekt Kurs</title>
-	<link rel="stylesheet" href="style.css">
-	
-	<link defer rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@24,700,1,-25&icon_names=login,logout"/>
-	
-	<script defer src="script.js"></script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1024">
+<title>Projekt Kurs</title>
+<link rel="stylesheet" href="style.css">
+<link defer rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@24,700,1,-25&icon_names=login,logout"/>
+<script defer src="script.js"></script>
+
 </head>
-<body onload="onloadPage()">
- 
-    <!-- Header -->
-	<header>
-		<nav>
-			<div class="navbar">
-				<a class="logo">Projektkurs Informatik</a>
-				<a href="#mitwirkende" class="hover">Mitwirkende</a>
-				<a href="#patchnotes" class="hover">Patchnotes</a>
-				<a href="#download" class="hover">Download</a>
-				<a href="https://github.com/Sneezy123/ProjektKursInfo" class="hover">GitHub</a>
-			</div>
-	</nav>
+<body>
+
+<!-- Preloaded -->
+<section class="preloaded" id="preloaded">
+<div class="loader"></div>
+</section>
+
+
+<!-- Postloaded -->
+<section class="content postloaded" id="postloaded">
+
+<!-- Header -->
+<header>
+<nav>
+<div class="navbar">
+<a class="logo" id="test">Projektkurs Informatik</a>
+<a href="#mitwirkende" class="hover">Mitwirkende</a>
+<a href="#patchnotes" class="hover">Patchnotes</a>
+<a href="#download" class="hover">Download</a>
+<a href="https://github.com/Sneezy123/ProjektKursInfo" class="hover">GitHub</a>
+</div>
+</nav>
 </header>
 
-  <div id="loading-screen">
-    <div class="spinner"></div>
-  </div>
+<section class="game-preview">
+<h1 class="game-title">Me without You</h1>
+<h2 class="game-subtitel">Where Silence Speaks Loudest</h2>
+</section>
+
+<!-- Mitwirkende -->
+<div class="greyline"> </div>    
 	
-	<div id="content">
+<section id="mitwirkende">
+<h2 class="titel">Mitwirkende</h2>
+<div class="team">
+<div class="person">
+<h3 class="name">Jannik</h3>
+<p class="job">Programmierer / 2D/3D-Designer</p>
+</div>
+<div class="person">
+<h3 class="name">Nils</h3>
+<p class="job">Programmierer / GitHub</p>
+</div>
+<div class="person">
+<h3 class="name">Kevin</h3>
+<p class="job">Sound-Designer / Kreativer</p>
+</div>
+<div class="person">
+<h3 class="name">Elias</h3>
+<p class="job">Programmierer / Musik</p>
+</div>
+<div class="person">
+<h3 class="name">Bastian</h3>
+<p class="job">3D-Designer</p>
+</div>
+<div class="person">
+<h3 class="name">Bartusz</h3>
+<p class="job">3D-Designer</p>
+</div>
+<div class="person">
+<h3 class="name">Tim</h3>
+<p class="job">Programmierer</p>
+</div>
+<div class="person">
+<h3 class="name">Finn</h3>
+<p class="job">Musiker / Kreativer</p>
+</div>
+<div class="person">
+<h3 class="name">Umut</h3>
+<p class="job">Sound-Designer / Kreativer</p>
+</div>
+<div class="person">
+<h3 class="name">Iwan</h3>
+<p class="job">3D-Designer / Programmierer</p>
+</div>
+</div>
+</section>
 
+<div class="greyline"> </div>
 
-	<section class="game-preview">
-   		<h1 class="game-title">Me without You</h1>
-		<h2 class="game-subtitel">Where Silence Speaks Loudest</h2>
-	</section>
-
-    <!-- Mitwirkende Section -->
-	<div class="greyline"> </div>    
-	
-		<section id="mitwirkende">
-        <h2 class="titel">Mitwirkende</h2>
-        <div class="team">
-            <div class="person">
-                <h3 class="name">Jannik</h3>
-                <p class="job">Programmierer / 2D/3D-Designer</p>
-            </div>
-            <div class="person">
-                <h3 class="name">Nils</h3>
-                <p class="job">Programmierer / GitHub</p>
-            </div>
-				        <div class="person">
-                <h3 class="name">Kevin</h3>
-                <p class="job">Sound-Designer / Kreativer</p>
-            </div>
-            <div class="person">
-                <h3 class="name">Elias</h3>
-                <p class="job">Programmierer / Musik</p>
-            </div>
-            <div class="person">
-                <h3 class="name">Bastian</h3>
-                <p class="job">3D-Designer</p>
-            </div>
-				        <div class="person">
-                <h3 class="name">Tim</h3>
-                <p class="job">3D-Designer / Programmierer</p>
-				        </div>
-												<div class="person">
-                <h3 class="name">Bartusz</h3>
-                <p class="job">3D-Designer</p>
-            </div>
-												<div class="person">
-                <h3 class="name">Finn</h3>
-                <p class="job">Musiker / Kreativer</p>
-            </div>
-	           <div class="person">
-                <h3 class="name">Umut</h3>
-                <p class="job">Sound-Designer / Kreativer</p>
-            </div>
-												<div class="person">
-                <h3 class="name">Iwan</h3>
-                <p class="job">3D-Designer / Programmierer</p>
-            </div>
-        </div>
-    </section>
-
-	<div class="greyline"> </div>
-
-    <!-- Patchnotes Section -->
-    <section id="patchnotes">
-        <h2 class="titel">Patchnotes</h2>
+<!-- Patchnotes -->
+<section id="patchnotes">
+<h2 class="titel">Patchnotes</h2>
 								
-								
-			<div class="patch active-patch">
-				<h3 class="patch-titel">Alpha 1.11.1.n</h3>
-				<p class="patch-description">
-					• multiple colors for different object types (outline) <br>
-					• better collision with walls and floor <br>
-					• interaction system improved (removed duplicate code) <br>
-					• central key binds for better editing <br>
-					• dropping of the flashlight (Shift + Q) <br>
-					• resolved bug: outline does not work correctly <br>
-					• known bug: missing textures <br>
-					• known bug: light shines through walls
-				</p>
-			</div>
+<div class="patch active-patch">
+<h3 class="patch-titel">Alpha 1.11.1.n</h3>
+<p class="patch-description">
+• multiple colors for different object types (outline) <br>
+• better collision with walls and floor <br>
+• interaction system improved (removed duplicate code) <br>
+• central key binds for better editing <br>
+• dropping of the flashlight (Shift + Q) <br>
+• resolved bug: outline does not work correctly <br>
+• known bug: missing textures <br>
+• known bug: light shines through walls
+</p>
+</div>
 
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.10.1.n</h3>
-				<p class="patch-description">
-					• added outline on interaction with items <br>
-					• added house model to a new scene <br>
-					• added battery funtion to the flashlight <br>
-					• known bug: outline does not work correctly <br>
-					• known bug: missing textures
-				</p>
-			</div>
+<div class="patch">
+<h3 class="patch-titel">Alpha 1.10.1.n</h3>
+<p class="patch-description">
+• added outline on interaction with items <br>
+• added house model to a new scene <br>
+• added battery funtion to the flashlight <br>
+• known bug: outline does not work correctly <br>
+• known bug: missing textures
+</p>
+</div>
+<div class="patch">
+<h3 class="patch-titel">Alpha 1.9.9.j</h3>
+<p class="patch-description">
+• improved player animation controller script <br>
+• improved player animation handeling <br>
+• modified player movement script
+</p>
+</div>
+<div class="patch">
+<h3 class="patch-titel">Alpha 1.9.8.n</h3>
+<p class="patch-description">
+• implemented player animations <br>
+• resolved bug: player crouching
+</p>
+</div>			
+<a href="patchnotes.html" class="patchnotes-btn">>ältere Patchnotes</a>
+</section>
 
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.9.9.j</h3>
-				<p class="patch-description">
-					• improved player animation controller script <br>
-					• improved player animation handeling <br>
-					• modified player movement script
-				</p>
-			</div>
-			
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.9.8.n</h3>
-				<p class="patch-description">
-					• implemented player animations <br>
-					• resolved bug: player crouching
-				</p>
-			</div>			
+<div class="greyline"> </div>
 
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.9.7.j</h3>
-				<p class="patch-description">
-					• added dropping with force <br>
-					• partly resolved bug: player crouching
-				</p>
-			</div>
+<!-- Download -->
+<section id="download">
+<h2 class="titel">Download</h2>
+<div class="download-button">
+<p>Downloade die neueste Version hier:</p>
+<a href="https://cdn.matix-media.net/dd/989a2a9b" class="download-btn">Download</a>
+</div>
+</section>
 
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.9.6.n</h3>
-				<p class="patch-description">
-					• added player animtions <br>
-					• resolved bug: items collide with player
-				</p>
-			</div>
+<div class="greyline"> </div>
 
-			<a href="patchnotes.html" class="patchnotes-btn">>ältere Patchnotes</a>
-    </section>
+<!-- Footer -->
+<footer>
 
-	<div class="greyline"> </div>
+<p>©ProjektKursMSM</p>
 
-    <!-- Download Section -->
-    <section id="download">
-        <h2 class="titel">Download</h2>
-			<div class="download-button">
-        		<p>Downloade die neueste Version hier:</p>
-        		<a href="https://cdn.matix-media.net/dd/989a2a9b" class="download-btn">Download</a>
-			</div>
-    </section>
-
-	<div class="greyline"> </div>
-
-    <!-- Footer -->
-    <footer>
-        <p>©ProjektKursMSM</p>
-    </footer>
-				
-	</div>
+</footer>
+</section>
 </body>
 </html>
