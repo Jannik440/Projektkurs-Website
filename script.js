@@ -118,33 +118,18 @@ function submitPatchnote() {
 	}
 }
 
-function onloadPage() {
-	const isLoggedIn = localStorage.getItem("isLoggedIn");
-	checkLoginStatus();
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  const loadingScreen = document.getElementById("loading-screen");
-  const content = document.getElementById("content");
-
-  // Warten und dann ausblenden
-  setTimeout(() => {
-    loadingScreen.style.display = "none";
-    content.style.display = "block";
-  }, 3000); // 3 Sekunde Verzögerung
-});
-
-window.onload = function () {
-  const loadingScreen = document.getElementById("loading-screen");
-  const content = document.getElementById("content");
-
-  setTimeout(function () {
-    loadingScreen.style.display = "none";
-    content.style.display = "block";
-  }, 3000); // Anpassbare Verzögerung
-};
-
-
 function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
+
+window.addEventListener('load', async function() {
+    const loadingScreen = document.getElementById("preloaded");
+    const content = document.getElementById("postloaded");
+
+    // Optional: Wait for a short period to simulate loading
+    await sleep(1000); // Adjust this value as needed
+
+    // Hide the loader and show the content
+    loadingScreen.style.display = "none"; // Hide loader
+    content.style.display = "block"; // Show content
+});
