@@ -133,3 +133,14 @@ window.addEventListener('load', async function() {
     loadingScreen.style.display = "none"; // Hide loader
     content.style.display = "block"; // Show content
 });
+
+function loadingScreen() {
+	const loadingScreen = document.getElementById("preloaded");
+	const content = document.getElementById("postloaded");
+	
+	await sleep(1000);
+	
+	loadingScreen.style.display = "none";
+	content.style.display = "block";
+	
+}
