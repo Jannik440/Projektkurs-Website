@@ -1,160 +1,377 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
+
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=1024">
-<title>Projekt Kurs</title>
-<link rel="stylesheet" href="style.css">
-<link defer rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@24,700,1,-25&icon_names=login,logout"/>
-<script defer src="script.js"></script>
-
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>
+        Me without you
+    </title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
-<body onload="loadingScreen()">
 
-<!-- Preloaded -->
-<section class="postloaded" id="postloaded">
-<div class="loader"></div>
-</section>
+<body>
+    <header>
+        <img alt="Logo" height="50"
+            src="https://storage.googleapis.com/a1aa/image/RcZPlKue1D1kPyTdj464C8SWeGvssl7sofnjcMj3JksPfCtPB.jpg"
+            width="50" />
+        <nav class="navbar">
+            <ul>
+                <li>
+                    <a href="#start">
+                        Start
+                    </a>
+                </li>
+                <li>
+                    <a href="#info">
+                        Infos
+                    </a>
+                </li>
+                <li>
+                    <a href="#contributors">
+                        Mitwirkende
+                    </a>
+                </li>
+                <li>
+                    <a href="#patchnotes">
+                        Patchnotes
+                    </a>
+                </li>
+                <li>
+                    <a href="#download">
+                        Download
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="icons">
+            <a href="https://github.com/Sneezy123/ProjektKursInfo"><i class="fab fa-github"></i></a>
 
+            <a href="https://sneezy123.itch.io/projektkursinfo"><i class="fab fa-itch-io"></i></a>
+            
+            <a href="mailto:msmprojektkursinfo@gmail.com" ><i class="fas fa-question"></i></a>
+        </div>
+        <a class="menu-bars" href="javascript:void()" onclick="OpenMenuBar()"><i class="fas fa-bars"></i></a>
+    </header>
+    <div class="hero" id="start">
+        <h1>
+            Me without you
+        </h1>
+        <p>
+            Where Silence speaks loudest
+        </p>
+        <div class="underline">
+        </div>
+    </div>
+    <div class="container">
+        <div class="section" id="info">
+            <h2>
+                Infos
+            </h2>
+            <p>
+                Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
+                blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language
+                ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia.
+            </p>
+            <p>
+                It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the
+                all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day
+                however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of
+                Grammar.
+            </p>
+            <p>
+                The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks
+                and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her
+                initial into the belt and made herself on the way. When she reached the first hills of the Italic
+                Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of
+                Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over
+                her cheek, then
+            </p>
+        </div>
+        <div class="section">
+            <h2>
+                Mitwirkende
+            </h2>
+            <div class="contributors" id="contributors">
+                <div class="contributor">
+                    <img alt="Contributor Image" height="50"
+                        src="https://storage.googleapis.com/a1aa/image/BCZeJzilDzXhKar8Nf3KG4CHXTeQiHLD4v4OHOgf04mheFafE.jpg"
+                        width="50" />
+                    <div class="contributer-title">
+                        <h3>
+                            Jannik
+                        </h3>
+                        <p>
+                            Programmierer,<br> Design
+                        </p>
+                    </div>
+                </div>
+                <div class="contributor">
+                    <img alt="Contributor Image" height="50"
+                        src="https://storage.googleapis.com/a1aa/image/BCZeJzilDzXhKar8Nf3KG4CHXTeQiHLD4v4OHOgf04mheFafE.jpg"
+                        width="50" />
+                    <div class="contributer-title">
+                        <h3>
+                            Nils
+                        </h3>
+                        <p>
+                            Programmierer,<br> GitHub
+                        </p>
+                    </div>
+                </div>
+                <div class="contributor">
+                    <img alt="Contributor Image" height="50"
+                        src="https://storage.googleapis.com/a1aa/image/BCZeJzilDzXhKar8Nf3KG4CHXTeQiHLD4v4OHOgf04mheFafE.jpg"
+                        width="50" />
+                    <div class="contributer-title">
+                        <h3>
+                            Kevin
+                        </h3>
+                        <p>
+                            Kreativ,<br> Sounds
+                        </p>
+                    </div>
+                </div>
+                <div class="contributor">
+                    <img alt="Contributor Image" height="50"
+                        src="https://storage.googleapis.com/a1aa/image/BCZeJzilDzXhKar8Nf3KG4CHXTeQiHLD4v4OHOgf04mheFafE.jpg"
+                        width="50" />
+                    <div class="contributer-title">
+                        <h3>
+                            Elias
+                        </h3>
+                        <p>
+                            Programmierer,<br> Musik
+                        </p>
+                    </div>
+                </div>
+                <div class="contributor">
+                    <img alt="Contributor Image" height="50"
+                        src="https://storage.googleapis.com/a1aa/image/BCZeJzilDzXhKar8Nf3KG4CHXTeQiHLD4v4OHOgf04mheFafE.jpg"
+                        width="50" />
+                    <div class="contributer-title">
+                        <h3>
+                            Bastian
+                        </h3>
+                        <p>
+                            Design
+                        </p>
+                    </div>
+                </div>
+                <div class="contributor">
+                    <img alt="Contributor Image" height="50"
+                        src="https://storage.googleapis.com/a1aa/image/BCZeJzilDzXhKar8Nf3KG4CHXTeQiHLD4v4OHOgf04mheFafE.jpg"
+                        width="50" />
+                    <div class="contributer-title">
+                        <h3>
+                            Bartusz
+                        </h3>
+                        <p>
+                            Design
+                        </p>
+                    </div>
+                </div>
+                <div class="contributor">
+                    <img alt="Contributor Image" height="50"
+                        src="https://storage.googleapis.com/a1aa/image/BCZeJzilDzXhKar8Nf3KG4CHXTeQiHLD4v4OHOgf04mheFafE.jpg"
+                        width="50" />
+                    <div class="contributer-title">
+                        <h3>
+                            Tim
+                        </h3>
+                        <p>
+                            Programmierer
+                        </p>
+                    </div>
+                </div>
+                <div class="contributor">
+                    <img alt="Contributor Image" height="50"
+                        src="https://storage.googleapis.com/a1aa/image/BCZeJzilDzXhKar8Nf3KG4CHXTeQiHLD4v4OHOgf04mheFafE.jpg"
+                        width="50" />
+                    <div class="contributer-title">
+                        <h3>
+                            Finn
+                        </h3>
+                        <p>
+                            Kreativ,<br> Musik
+                        </p>
+                    </div>
+                </div>
+                <div class="contributor">
+                    <img alt="Contributor Image" height="50"
+                        src="https://storage.googleapis.com/a1aa/image/BCZeJzilDzXhKar8Nf3KG4CHXTeQiHLD4v4OHOgf04mheFafE.jpg"
+                        width="50" />
+                    <div class="contributer-title">
+                        <h3>
+                            Umut
+                        </h3>
+                        <p>
+                            Kreativ,<br> Sounds
+                        </p>
+                    </div>
+                </div>
+                <div class="contributor">
+                    <img alt="Contributor Image" height="50"
+                        src="https://storage.googleapis.com/a1aa/image/BCZeJzilDzXhKar8Nf3KG4CHXTeQiHLD4v4OHOgf04mheFafE.jpg"
+                        width="50" />
+                    <div class="contributer-title">
+                        <h3>
+                            Iwan
+                        </h3>
+                        <p>
+                            Design
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section" id="patchnotes">
+            <h2>
+                Patchnotes
+            </h2>
+            <div class="patchnotes">
+                <div class="patchnote recent-patch">
+                    <img alt="Patchnote Image" height="100"
+                        src="https://storage.googleapis.com/a1aa/image/sRb9uOUuQNKYNVJNoErP1nMBpfqBqIYAWYPQkhHZ3bv0Xo9JA.jpg"
+                        width="100" />
+                    <div class="patchnote-title">
+                        <h3>
+                            Alpha 1.11.1.n
+                        </h3>
+                        <p>
+                            Alpha version
+                        </p>
+                        <br>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
+                        </p>
+                        <br>
+                        
+                        <a href=""><span class="commit">
+                            See commit
+                            </span><i class="fas fa-arrow-up-right-from-square" ></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="patchnote">
+                    <img alt="Patchnote Image" height="100"
+                        src="https://storage.googleapis.com/a1aa/image/sRb9uOUuQNKYNVJNoErP1nMBpfqBqIYAWYPQkhHZ3bv0Xo9JA.jpg"
+                        width="100" />
+                    <div class="patchnote-title">
+                        <h3>
+                            Alpha 1.11.2.n
+                        </h3>
+                        <p>
+                            Alpha version
+                        </p>
+                        <br>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
+                        </p>
+                        <br>
+                        
+                        <a href="">
+                            <span class="commit">
+                                See commit
+                            </span>
+                            <i class="fas fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="patchnote">
+                    <img alt="Patchnote Image" height="100"
+                        src="https://storage.googleapis.com/a1aa/image/sRb9uOUuQNKYNVJNoErP1nMBpfqBqIYAWYPQkhHZ3bv0Xo9JA.jpg"
+                        width="100" />
+                    <div class="patchnote-title">
+                        <h3>
+                            Alpha 1.11.3.n
+                        </h3>
+                        <p>
+                            Alpha version
+                        </p>
+                        <br>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
+                        </p>
+                        <br>
+                        
+                        <a href="">
+                            <span class="commit">
+                                See commit
+                            </span>
+                            <i class="fas fa-arrow-up-right-from-square"></i>
+                        </a>
 
-<!-- Postloaded -->
-<section class="content postloaded" id="postloaded" class="preloaded" id="preloaded">
-
-<!-- Header -->
-<header>
-<nav>
-<div class="navbar">
-<a class="logo" id="test">Projektkurs Informatik</a>
-<a href="#mitwirkende" class="hover">Mitwirkende</a>
-<a href="#patchnotes" class="hover">Patchnotes</a>
-<a href="#download" class="hover">Download</a>
-<a href="https://github.com/Sneezy123/ProjektKursInfo" class="hover">GitHub</a>
-</div>
-</nav>
-</header>
-
-<section class="game-preview">
-<h1 class="game-title">Me without You</h1>
-<h2 class="game-subtitel">Where Silence Speaks Loudest</h2>
-</section>
-
-<!-- Mitwirkende -->
-<div class="greyline"> </div>    
-	
-<section id="mitwirkende">
-<h2 class="titel">Mitwirkende</h2>
-<div class="team">
-<div class="person">
-<h3 class="name">Jannik</h3>
-<p class="job">Programmierer / 2D/3D-Designer</p>
-</div>
-<div class="person">
-<h3 class="name">Nils</h3>
-<p class="job">Programmierer / GitHub</p>
-</div>
-<div class="person">
-<h3 class="name">Kevin</h3>
-<p class="job">Sound-Designer / Kreativer</p>
-</div>
-<div class="person">
-<h3 class="name">Elias</h3>
-<p class="job">Programmierer / Musik</p>
-</div>
-<div class="person">
-<h3 class="name">Bastian</h3>
-<p class="job">3D-Designer</p>
-</div>
-<div class="person">
-<h3 class="name">Bartusz</h3>
-<p class="job">3D-Designer</p>
-</div>
-<div class="person">
-<h3 class="name">Tim</h3>
-<p class="job">Programmierer</p>
-</div>
-<div class="person">
-<h3 class="name">Finn</h3>
-<p class="job">Musiker / Kreativer</p>
-</div>
-<div class="person">
-<h3 class="name">Umut</h3>
-<p class="job">Sound-Designer / Kreativer</p>
-</div>
-<div class="person">
-<h3 class="name">Iwan</h3>
-<p class="job">3D-Designer / Programmierer</p>
-</div>
-</div>
-</section>
-
-<div class="greyline"> </div>
-
-<!-- Patchnotes -->
-<section id="patchnotes">
-<h2 class="titel">Patchnotes</h2>
-								
-<div class="patch active-patch">
-<h3 class="patch-titel">Alpha 1.11.1.n</h3>
-<p class="patch-description">
-• multiple colors for different object types (outline) <br>
-• better collision with walls and floor <br>
-• interaction system improved (removed duplicate code) <br>
-• central key binds for better editing <br>
-• dropping of the flashlight (Shift + Q) <br>
-• resolved bug: outline does not work correctly <br>
-• known bug: missing textures <br>
-• known bug: light shines through walls
-</p>
-</div>
-
-<div class="patch">
-<h3 class="patch-titel">Alpha 1.10.1.n</h3>
-<p class="patch-description">
-• added outline on interaction with items <br>
-• added house model to a new scene <br>
-• added battery funtion to the flashlight <br>
-• known bug: outline does not work correctly <br>
-• known bug: missing textures
-</p>
-</div>
-<div class="patch">
-<h3 class="patch-titel">Alpha 1.9.9.j</h3>
-<p class="patch-description">
-• improved player animation controller script <br>
-• improved player animation handeling <br>
-• modified player movement script
-</p>
-</div>
-<div class="patch">
-<h3 class="patch-titel">Alpha 1.9.8.n</h3>
-<p class="patch-description">
-• implemented player animations <br>
-• resolved bug: player crouching
-</p>
-</div>			
-<a href="patchnotes.html" class="patchnotes-btn">>ältere Patchnotes</a>
-</section>
-
-<div class="greyline"> </div>
-
-<!-- Download -->
-<section id="download">
-<h2 class="titel">Download</h2>
-<div class="download-button">
-<p>Downloade die neueste Version hier:</p>
-<a href="https://cdn.matix-media.net/dd/989a2a9b" class="download-btn">Download</a>
-</div>
-</section>
-
-<div class="greyline"> </div>
-
-<!-- Footer -->
-<footer>
-
-<p>©ProjektKursMSM</p>
-
-</footer>
-</section>
+                    </div>
+                </div>
+                <div class="patchnote">
+                    <img alt="Patchnote Image" height="100"
+                        src="https://storage.googleapis.com/a1aa/image/sRb9uOUuQNKYNVJNoErP1nMBpfqBqIYAWYPQkhHZ3bv0Xo9JA.jpg"
+                        width="100" />
+                    <div class="patchnote-title">
+                        <h3>
+                            Alpha 1.11.4.n
+                        </h3>
+                        <p>
+                            Alpha version
+                        </p>
+                        <br>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
+                        </p>
+                        <br>
+                        
+                        <a href="">
+                            <span class="commit">
+                                See commit
+                            </span>
+                            <i class="fas fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <a href="patchnotes.html">
+                Alle Patchnotes
+                <i class="fas fa-arrow-up-right-from-square"></i>
+            </a>
+        </div>
+        <div class="download" id="download">
+            <a href="#">
+            <div>
+                    Download the most recent version
+                </div>
+            </a>
+        </div>
+    </div>
+    <footer>
+        <p>
+            &copy; MSM Projektkurs 2024
+        </p>
+        <p>
+            If you find any bugs, report them here:
+            <a href="https://github.com/Sneezy123/ProjektKursInfo/issues">
+                Report an Issue on GitHub
+            </a>
+        </p>
+        <div class="icons">
+            <a href="https://github.com/Sneezy123/ProjektKursInfo">
+                <i class="fab fa-github">
+                </i>
+            </a>
+            <a href="https://sneezy123.itch.io/projektkursinfo">
+                <i class="fab fa-itch-io">
+                </i>
+            </a>
+            <a href="mailto:msmprojektkursinfo@gmail.com">
+                <i class="fas fa-question">
+                </i>
+            </a>
+        </div>
+    </footer>
 </body>
+
 </html>

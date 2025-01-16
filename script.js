@@ -1,146 +1,81 @@
-const correctPassword = "admin123";
+function OpenMenuBar() {
+    var navBar = document.querySelector("nav")
+    if (navBar.className === "navbar") {
+      navBar.className += " responsive";
+    } else {
+      navBar.className = "navbar";
+    }
 
-function togglePopup() {
-	const modal = document.getElementById("modal");
-	const overlay = document.getElementById("overlay");
-	modal.style.display = modal.style.display === "none" || modal.style.display === "" ? "block" : "none";
-	overlay.style.display = overlay.style.display === "none" || overlay.style.display === "" ? "block" : "none";
+    var menuIcon = document.querySelector(".menu-bars");
+    if (menuIcon.className === "menu-bars") {
+        menuIcon.className += " responsive";
+    } else {
+        menuIcon.className = "menu-bars";
+    }
+
+    var icons = document.querySelector(".icons");
+    if (icons.className === "icons") {
+        icons.className += " responsive";
+    } else {
+        icons.className = "icons";
+    }
 }
 
-function checkPassword() {
-	const input = document.getElementById("admin-password");
-	if (input.value === correctPassword) {
-		localStorage.setItem("isLoggedIn", "true");
-		
-		const modal = document.getElementById("modal");
-		modal.style.transition = "300ms ease";
-		modal.style.borderColor = "lime";
-		
-		sleep(300).then(() => {
-			modal.style.borderColor = "#5cabab";
-			
-			sleep(300).then(() => {
-				document.querySelectorAll('.admin-needed-to-show').forEach(el => {
-					el.classList.remove('hidden');
-				});
-        
-				document.querySelectorAll('.admin-needed-to-hide').forEach(el => {
-					el.classList.add('hidden');
-				});
-				
-				togglePopup();
-			});
-		});
-		
-	} else	{
-		localStorage.setItem("isLoggedIn", "false");
-		const modal = document.getElementById("modal");
-		modal.style.transition = "500ms ease";
-		modal.style.borderColor = "red";
-	}
-	
-	input.value = '';
-	sleep(500).then(() => {
-		const modal = document.getElementById("modal");
-		modal.style.transition = "500ms ease";
-		modal.style.borderColor = "#5cabab";
-	});
+function OpenLoginForm() {
+    var loginForm = document.getElementById("login-form");
+    loginForm.style.display = "flex"
 }
 
-function toggleAdminOff() {
-	document.querySelectorAll('.admin-needed-to-show').forEach(el => {
-	el.classList.add('hidden');
-	localStorage.setItem("isLoggedIn", "false");	
-	});
+async function Login() {
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
 
-	document.querySelectorAll('.admin-needed-to-hide').forEach(el => {
-		el.classList.remove('hidden');
-	});
-	
-	togglePopup(); 
-	localStorage.setItem("isLoggedIn", "false");
+    // 1. time
+    username = await sha256(username);
+    password = await sha256(password);
+    // 2. time
+    username = await sha256(username);
+    password = await sha256(password);
+    
+    if (username === "68597891389543d8004058d4069db8be0548a3851c169f0bc76343982d65b224" && password === "a71dedd0cf8a96fb72476448879a3f0e4f1e45c091537aeba76d2cad54f4356e") {
+        LoginLogic()
+    }
+    else {
+        var pCorrect = document.getElementById("is-correct")
+        pCorrect.innerText = "Benutzername oder Passwort sind falsch!"
+    }
+}
+
+function LoginLogic() {
+    CloseLoginForm()
+    var addPatchnoteSection = document.getElementById("add-new-patchnote");
+    addPatchnoteSection.style.display = "block";
 }
 
 
-// Event Listener für Enter-Taste
-document.getElementById("admin-password").addEventListener("keypress", function(event) {
-	if (event.key === "Enter") {
-		checkPassword();
-		event.preventDefault(); 
-	}
-});
-
-
-function checkLoginStatus() {
-	const isLoggedIn = localStorage.getItem("isLoggedIn");
-
-	if (isLoggedIn === "true") {
-			// Benutzer ist angemeldet
-		document.querySelectorAll('.admin-needed-to-show').forEach(el => {
-		el.classList.remove('hidden');
-		});
-        
-			document.querySelectorAll('.admin-needed-to-hide').forEach(el => {
-			el.classList.add('hidden');
-			});
-	} else {
-			// Benutzer ist nicht angemeldet
-			document.querySelectorAll('.admin-needed-to-show').forEach(el => {
-		el.classList.add('hidden');
-		});
-        
-			document.querySelectorAll('.admin-needed-to-hide').forEach(el => {
-			el.classList.remove('hidden');
-			});
-	}
+function CloseLoginForm() {
+    var loginForm = document.getElementById("login-form");
+    loginForm.style.display = "none";
 }
 
-function clearForm() {
-	// Setzt die Formularfelder zurück
-	document.getElementById('version').value = '';
-	document.getElementById('description').value = '';
-	}
+function SendPatchnote() {
+    var patchnoteVersion = document.getElementById("patchnote-version").value;
+    var patchnoteDescription = document.getElementById("patchnote-description").value;
 
-function submitPatchnote() {
-	// Holt die Daten aus dem Formular
-	const version = document.getElementById('version').value;
-	const description = document.getElementById('description').value;
-	if (version && description) {
-		//Erstellen des Mailto-Links
-		const email = 'msmprojektkursinfo@gmail.com';
-		const subject = `Neue Patchnote Versionanfrage (${version})`;
-		const body = `Version: ${version}\n\nBeschreibung:\n${description}`;
-		const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-		// Öffnet den Standard-Mailclient mit den Patchnote-Details
-		window.location.href = mailtoLink;
-	} else {
-		alert('Bitte fülle alle Felder aus, bevor du die Patchnote absendest. Jannik braucht alle Infos um deinen Commit einzutragen.');
-	}
+    window.open(`mailto:msmprojektkursinfo@gmail.com?subject=${ encodeURI(patchnoteVersion) }&body=${ encodeURI(patchnoteDescription) }`);
 }
 
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+async function sha256(inputString) {
+    const encoder = new TextEncoder();
+    const data = encoder.encode(inputString);
+    
+    const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+    
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+    
+    return hashHex;
 }
 
-window.addEventListener('load', async function() {
-    const loadingScreen = document.getElementById("preloaded");
-    const content = document.getElementById("postloaded");
 
-    // Optional: Wait for a short period to simulate loading
-    await sleep(1000); // Adjust this value as needed
-
-    // Hide the loader and show the content
-    loadingScreen.style.display = "none"; // Hide loader
-    content.style.display = "block"; // Show content
-});
-
-function loadingScreen() {
-	const loadingScreen = document.getElementById("preloaded");
-	const content = document.getElementById("postloaded");
-	
-	await sleep(1000);
-	
-	loadingScreen.style.display = "none";
-	content.style.display = "block";
-	
-}
+// sha256("Put whatever here").then(hash => sha256(hash).then(hash2 => console.log(hash2)));
