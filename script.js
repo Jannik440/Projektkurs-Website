@@ -37,7 +37,7 @@ async function Login() {
     username = await sha256(username);
     password = await sha256(password);
     
-    if (username === "68597891389543d8004058d4069db8be0548a3851c169f0bc76343982d65b224" && password === "a71dedd0cf8a96fb72476448879a3f0e4f1e45c091537aeba76d2cad54f4356e") {
+    if (username === "68597891389543d8004058d4069db8be0548a3851c169f0bc76343982d65b224" && password === "a32b8d057401acc1aa5bc57a63ee1a6154105c79e9315dfbeef8e5435c59d388") {
         LoginLogic()
     }
     else {
