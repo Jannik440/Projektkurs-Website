@@ -1,554 +1,230 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=1024">
-    <title>Patchnotes</title>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>
+        Me without you
+    </title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css">
-	
-	<link defer rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@24,700,1,-25&icon_names=login,logout"/>
-	
-	<script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
+
 <body>
- 
 
-<!-- Preloaded -->
-<section class="preloaded" id="preloaded">
-<div class="loader"></div>
-</section>
+    <div class="overlay" id="login-form">
+        <form class="login-screen">
+            <h3>Entsperren</h3>
+            <div>
+                <label for="username">Benutzername</label>
+                <input type="text" id="username" placeholder="Benutzername eingeben" required>
+            </div>
+            <div>
+                <label for="password">Passwort</label>
+                <input type="password" id="password" placeholder="Passwort eingeben" required>
+            </div>
+            <p id="is-correct"></p>
+            <button type="button" id="button-login" onclick="Login()">Entsperren</button>
+            <button type="button" id="button-close-login" onclick="CloseLoginForm()">Schließen</button>
+        </form>
+    </div>
 
-
-<!-- Postloaded -->
-<section class="content postloaded" id="postloaded">
-    
-<!-- Header -->
     <header>
-		<nav>
-			<div class="navbar admin-needed-to-hide">
-				<a class="logo">Projektkurs Informatik</a>
-				<a href="index.html" class="hover">Start</a>
-				<a href="#download" class="hover">Download</a>
-				<a href="https://github.com/Sneezy123/ProjektKursInfo" class="hover">GitHub</a>
-				<span class="material-symbols-sharp admin-login button" onclick="togglePopup()">
-                login
-            </span>
-			</div>
-			<div class="navbar admin-needed-to-show hidden">
-				<a class="logo">Admin access</a>
-				<a href="index.html" class="hover">Start</a>
-				<a href="#download" class="hover">Download</a>
-				<a href="https://github.com/Sneezy123/ProjektKursInfo" class="hover">GitHub</a>
-				<a class="material-symbols-sharp admin-login" onclick="togglePopup()">
-					logout
-				</a>
+        <img alt="Logo" height="50"
+            src="https://storage.googleapis.com/a1aa/image/RcZPlKue1D1kPyTdj464C8SWeGvssl7sofnjcMj3JksPfCtPB.jpg"
+            width="50" />
+        <nav class="navbar">
+            <ul>
+                <li>
+                    <a href="index.html#start">
+                        Start
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html#info">
+                        Infos
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html#contributors">
+                        Mitwirkende
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html#patchnotes">
+                        Patchnotes
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html#download">
+                        Download
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="icons">
+            <a href="https://github.com/Sneezy123/ProjektKursInfo"><i class="fab fa-github"></i></a>
+
+            <a href="https://sneezy123.itch.io/projektkursinfo"><i class="fab fa-itch-io"></i></a>
+            
+            <a href="javascript:void()" onclick="OpenLoginForm()"><i class="fas fa-key"></i></a>
         </div>
-    </nav>
-</header>
+        <a class="menu-bars" href="javascript:void()" onclick="OpenMenuBar()"><i class="fas fa-bars"></i></a>
+    </header>
 
-<div id="overlay" class="overlay" onclick="togglePopup()"> </div>
+    <div class="container">
+        <div class="section" id="add-new-patchnote">
+            <h2>Neue Patchnote hinzufügen</h2>
+            <form action="">
+                <div>
+                    <input type="text" id="patchnote-version" name="patchnote-version" placeholder="Version" required>
+                </div>
+                <div>
+                    <textarea rows="8" cols="1000" id="patchnote-description" name="patchnote-description" placeholder="Änderungen" maxlength="400" required></textarea>
+                </div>
+                <div class="buttons">
+                    <button type="submit" onclick="SendPatchnote()">Abschicken <i class="fas fa-paper-plane"></i></button>
+                    <button type="reset">Zurücksetzen</button>
+                </div>
+            </form>
+        </div>
 
-<div class="modal" id="modal">
-    <div class="modal-header admin-needed-to-hide">
-        <div class="modal-titel">Anmelden</div>
-        <button class="close" onclick="togglePopup()">&times;</button>
+        <div class="section" id="patchnotes">
+            <h2>
+                Patchnotes
+            </h2>
+            <div class="patchnotes-all">
+
+                <div class="patchnote recent-patch">
+                    <img alt="Patchnote Image" height="100"
+                        src="https://storage.googleapis.com/a1aa/image/sRb9uOUuQNKYNVJNoErP1nMBpfqBqIYAWYPQkhHZ3bv0Xo9JA.jpg"
+                        width="100" />
+                    <div class="patchnote-title">
+                        <h3>
+                            Alpha 1.11.1.n
+                        </h3>
+                        <p>
+                            Alpha version
+                        </p>
+                        <br>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
+                        </p>
+                        <br>
+                        
+                        <a href=""><span class="commit">
+                            See commit
+                            </span><i class="fas fa-arrow-up-right-from-square" ></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="patchnote">
+                    <img alt="Patchnote Image" height="100"
+                        src="https://storage.googleapis.com/a1aa/image/sRb9uOUuQNKYNVJNoErP1nMBpfqBqIYAWYPQkhHZ3bv0Xo9JA.jpg"
+                        width="100" />
+                    <div class="patchnote-title">
+                        <h3>
+                            Alpha 1.11.2.n
+                        </h3>
+                        <p>
+                            Alpha version
+                        </p>
+                        <br>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
+                        </p>
+                        <br>
+                        
+                        <a href="">
+                            <span class="commit">
+                                See commit
+                            </span>
+                            <i class="fas fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="patchnote">
+                    <img alt="Patchnote Image" height="100"
+                        src="https://storage.googleapis.com/a1aa/image/sRb9uOUuQNKYNVJNoErP1nMBpfqBqIYAWYPQkhHZ3bv0Xo9JA.jpg"
+                        width="100" />
+                    <div class="patchnote-title">
+                        <h3>
+                            Alpha 1.11.3.n
+                        </h3>
+                        <p>
+                            Alpha version
+                        </p>
+                        <br>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
+                        </p>
+                        <br>
+                        
+                        <a href="">
+                            <span class="commit">
+                                See commit
+                            </span>
+                            <i class="fas fa-arrow-up-right-from-square"></i>
+                        </a>
+
+                    </div>
+                </div>
+                <div class="patchnote">
+                    <img alt="Patchnote Image" height="100"
+                        src="https://storage.googleapis.com/a1aa/image/sRb9uOUuQNKYNVJNoErP1nMBpfqBqIYAWYPQkhHZ3bv0Xo9JA.jpg"
+                        width="100" />
+                    <div class="patchnote-title">
+                        <h3>
+                            Alpha 1.11.4.n
+                        </h3>
+                        <p>
+                            Alpha version
+                        </p>
+                        <br>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
+                        </p>
+                        <br>
+                        
+                        <a href="">
+                            <span class="commit">
+                                See commit
+                            </span>
+                            <i class="fas fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+            </div> 
+        </div>
     </div>
-    <div class="modal-body admin-needed-to-hide">
-        <form class="modal-form" onsubmit="return false;">
-            <p>Benutzername: <span>admin</span></p>
-            <input class="modal-form-input" id="admin-password" placeholder="Passwort" type="password">
-            <button class="button submit-button" id="login-button" onclick="checkPassword()">Anmelden</button>
-        </form>
-    </div>
-
-
-	<div class="modal-header admin-needed-to-show hidden">
-        <div class="modal-titel">Abmelden</div>
-        <button class="close" onclick="togglePopup()">&times;</button>
-    </div>
-    <div class="modal-body admin-needed-to-show hidden">
-        <form class="modal-form" onsubmit="return false;">
-            <p>Bist du sicher?</p>
-            <button class="button submit-button" id="logout-button" onclick="toggleAdminOff()">ja, Abmelden</button>
-        </form>
-    </div>
-</div>
-
-
-
-<section id="patchnote-requester" class="patchnotes-site admin-needed-to-show hidden">
-	<div class="patch empty-patch">
-		<form id="patchnote-form">
-			<input class="patch-titel" type="text" id="version" name="version" placeholder="Version eingeben..."><br><br>
-			<textarea class="new-patch-description" id="description" name="description" rows="5" cols="50" placeholder="Änderungsdetails hier eingeben..." type="text"></textarea><br><br>
-			<button class="button submit-button request-button request" type="button" onclick="submitPatchnote()">Anfragen</button>
-			<button class="button submit-button request-button clear" type="button" onclick="clearForm()">Abbrechen</button>
-		</form>
-	</div>
-</section>
-
-
-
-<div class="greyline admin-needed-to-show hidden"> </div>
-<h2 class="titel admin-needed-to-show hidden">Patchnote-Verlauf</h2>
-
-    <section id="patchnotes" class="patchnotes-site">
-					
-					
-					<div class="patch active-patch">
-				<h3 class="patch-titel">Alpha 1.11.1.n</h3>
-				<p class="patch-description">
-					• multiple colors for different object types (outline) <br>
-					• better collision with walls and floor <br>
-					• interaction system improved (removed duplicate code) <br>
-					• central key binds for better editing <br>
-					• dropping of the flashlight (Shift + Q) <br>
-					• resolved bug: outline does not work correctly <br>
-					• known bug: missing textures <br>
-					• known bug: light shines through walls
-				</p>
-			</div>
-
-	    		<div class="patch">
-				<h3 class="patch-titel">Alpha 1.10.1.n</h3>
-				<p class="patch-description">
-					• added outline on interaction with items <br>
-					• added house model to a new scene <br>
-					• added battery funtion to the flashlight <br>
-					• known bug: outline does not work correctly <br>
-					• known bug: missing textures
-				</p>
-			</div>
-
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.9.9.j</h3>
-				<p class="patch-description">
-					• improved player animation controller script <br>
-					• improved player animation handeling <br>
-					• modified player movement script
-				</p>
-			</div>
-			
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.9.8.n</h3>
-				<p class="patch-description">
-					• implemented player animations <br>
-					• resolved bug: player crouching
-				</p>
-			</div>			
-
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.9.7.j</h3>
-				<p class="patch-description">
-					• added dropping with force <br>
-					• partly resolved bug: player crouching
-				</p>
-			</div>
-
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.9.6.n</h3>
-				<p class="patch-description">
-					• added player animtions <br>
-					• resolved bug: items collide with player
-				</p>
-			</div>
-
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.9.5.n</h3>
-				<p class="patch-description">
-					• added item dropping system script
-				</p>
-			</div>
-
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.9.4.n</h3>
-				<p class="patch-description">
-					• heavily improved game performance <br>
-					• added pause menu
-				</p>
-			</div>
-
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.9.3.n</h3>
-				<p class="patch-description">
-					• improved keypad <br>
-					• added test text when player dies
-				</p>
-			</div>
-
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.9.2.e</h3>
-				<p class="patch-description">
-					• updated prefabs <br>
-					• added keypad lock <br>
-					• resolved bug: flashlight falls through the ground
-				</p>
-			</div>
-
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.9.1.n</h3>
-				<p class="patch-description">
-					• item pickup system script <br>
-					• added the flashlight <br>
-					• known bug: flashlight falls through the ground <br>
-					• known bug: items collide with player
-				</p>
-			</div>
-
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.8.4.j</h3>
-				<p class="patch-description">
-					• added door sounds <br>
-					• implemented door sounds
-				</p>
-			</div>
-
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.8.3.e</h3>
-				<p class="patch-description">
-					• added key interaction system script <br>
-					• added item blueprint script
-				</p>
-			</div>
-
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.8.2.j</h3>
-				<p class="patch-description">
-					• resolved bug: enemy path finding is lagging <br>
-					• added overlay images for hurt feedback <br>
-					• added health script <br>
-					• added player death
-				</p>
-			</div>
-
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.8.1.n</h3>
-				<p class="patch-description">
-					• added house placeholder mesh <br>
-					• added house placeholder scene <br>
-					• known bug: enemy path finding is lagging
-				</p>
-			</div>
-
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.7.6.j</h3>
-				<p class="patch-description">
-					• changed enemy default values <br>
-					• resolved bug: enemy patrolling is lagging
-				</p>
-			</div>
-
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.7.5.j</h3>
-				<p class="patch-description">
-					• adding health system script <br>
-					• resolved bug: enemy patrolling does not work
-					• known bug: enemy patrolling is lagging
-				</p>
-			</div>
-
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.7.4.j</h3>
-				<p class="patch-description">
-					• added player stamina <br>
-					• known bug: enemy patrolling does not work
-				</p>
-			</div>
-			
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.7.3.j</h3>
-				<p class="patch-description">
-					• fixed post processing shader bug <br>
-					• made post processing scalable
-				</p>
-			</div>
-
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.7.2.j</h3>
-				<p class="patch-description">
-					• changed post processing <br>
-					• added / implemented enemy chasing sounds
-				</p>
-			</div>
-
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.7.1.j</h3>
-				<p class="patch-description">
-					• added enemy patrolling <br>
-					• updated enemy AI script <br>
-					• merged enemy AI script with enemy FOV script
-				</p>
-			</div>
-
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.6.2.j</h3>
-				<p class="patch-description">
-					• updated enemy AI script <br>
-					• updated player movement script <br>
-					• changed project settings
-				</p>
-			</div>
-
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.6.2.e</h3>
-				<p class="patch-description">
-					• tiny changes <br>
-					• tiny bugfixes 
-				</p>
-			</div>
-			
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.6.1.n</h3>
-				<p class="patch-description">
-					• added new crosshair <br>
-					• added crosshair interaction feedback <br>
-					• detected / fixed camera clipping into walls bug
-				</p>
-			</div>
-
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.5.3.n</h3>
-				<p class="patch-description">
-					• added car interaction system script
-				</p>
-			</div>
-			
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.5.2.n</h3>
-				<p class="patch-description">
-					• fixed door interaction script <br>
-					• fixed raycast system
-				</p>
-			</div>
-
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.5.1.n</h3>
-				<p class="patch-description">
-					• added car mesh to sandbox scene 
-				</p>
-			</div>
-
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.4.4.j</h3>
-				<p class="patch-description">
-					• updated enemy AI script <br>
-					• improved enemy tracking 
-				</p>
-			</div>
-			
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.4.3.j</h3>
-				<p class="patch-description">
-					• added post processing <br>
-					• updatde / implemented post processing profile 
-				</p>
-			</div>
-
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.4.2.j</h3>
-				<p class="patch-description">
-					• updated enemy AI script
-				</p>
-			</div>
-
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.4.1.j</h3>
-				<p class="patch-description">
-					• updated camera movement script <br>
-					• added head bob system script <br>
-					• updated player movement script <br>
-					• added post processing profile 
-				</p>
-			</div>
-
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.3.5.n</h3>
-				<p class="patch-description">
-					• added missing files
-				</p>
-			</div>
-
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.3.4.j</h3>
-				<p class="patch-description">
-					• updated enemy AI
-				</p>
-			</div>
-
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.3.3.n</h3>
-				<p class="patch-description">
-					• changed hit variables<br>
-					• deleted sandbox scene to fix errors
-				</p>
-			</div>
-
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.3.2.n</h3>
-				<p class="patch-description">
-					• changes made to enemy AI script <br>
-					• changes made to player movement script
-				</p>
-			</div>
-
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.3.1.n</h3>
-				<p class="patch-description">
-					• door bug detected
-				</p>
-			</div>
-
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.2.5.j</h3>
-				<p class="patch-description">
-					• Improved enemy FOV controller script <br>
-					• Improved enemy AI controller script <br>
-					• Improved enemy AI tracking
-				</p>
-			</div>
-
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.2.4.j</h3>
-				<p class="patch-description">
-					• Improved enemy FOV controller script <br>
-					• Improved enemy AI controller script
-				</p>
-			</div>
-
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.2.3.j</h3>
-				<p class="patch-description">
-					• Improved enemy FOV controller script <br>
-					• Improved enemy AI controller script
-					• Added NavMesh to test scene
-				</p>
-			</div>
-
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.2.2.j</h3>
-				<p class="patch-description">
-					• Added / Implemented enemy FOV controller script <br>
-					• Added / Implemented enemy AI controller script <br>
-					• Added NavMesh to test scene
-				</p>
-			</div>
-
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.2.1.j</h3>
-				<p class="patch-description">
-					• Added new test scene to Unity
-				</p>
-			</div>
-
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.1.2.n</h3>
-				<p class="patch-description">
-					• Improved slope detection <br>
-					• known bug: player crouching
-				</p>
-			</div>
-
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.1.1.t</h3>
-				<p class="patch-description">
-					• Added Door mesh to Project <br>
-					• Added / Implemented Door animation controller <br>
-					• Added / Implemented Door interaction controller script <br>
-					• Added Door animation (Opening) <br>
-					• Added Door animation (Closing)
-				</p>
-			</div>
-
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.0.10.n</h3>
-				<p class="patch-description">
-					• Slope detection bug resolved
-				</p>
-			</div>
-
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.0.9.t</h3>
-				<p class="patch-description">
-					• New Teammembers Intruduced to Unity
-				</p>
-			</div>
-			
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.0.8.e</h3>
-				<p class="patch-description">
-					• Added Interaction System
-				</p>
-			</div>
-
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.0.7.e</h3>
-				<p class="patch-description">
-					• Player-facing-direction-detection script added
-				</p>
-			</div>
-
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.0.6.e</h3>
-				<p class="patch-description">
-					• Changed Mouse Sensetivity
-				</p>
-			</div>
-
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.0.5.j</h3>
-				<p class="patch-description">
-					• Updated Keybinds
-				</p>
-			</div>
-
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.0.4.j</h3>
-				<p class="patch-description">
-					• Newly Keybind script added
-				</p>
-			</div>
-
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.0.3.n</h3>
-				<p class="patch-description">
-					• Fixed gamebreaking bugs <br>
-					• Changed interaction length
-				</p>
-			</div>
-
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.0.2.n</h3>
-				<p class="patch-description">
-					• Fixed gamebreaking bugs
-				</p>
-			</div>
-
-			<div class="patch">
-				<h3 class="patch-titel">Alpha 1.0.1.j</h3>
-				<p class="patch-description">
-					• Initial version
-				</p>
-			</div>
-    </section>
-
-	<div class="greyline"> </div>
-
-
-    <section id="download">
-        <h2 class="titel">Download</h2>
-			<div class="download-button">
-        		<p>Downloade die neueste Version hier:</p>
-        		<a href="" class="download-btn">Download</a>
-			</div>
-    </section>
-
-	<div class="greyline"> </div>
-
-</section>
-
     <footer>
-        <p>©ProjektKursMSM</p>
+        <p>
+            &copy; MSM Projektkurs 2024
+        </p>
+        <p>
+            If you find any bugs, report them here:
+            <a href="https://github.com/Sneezy123/ProjektKursInfo/issues">
+                Report an Issue on GitHub
+            </a>
+        </p>
+        <div class="icons">
+            <a href="https://github.com/Sneezy123/ProjektKursInfo">
+                <i class="fab fa-github">
+                </i>
+            </a>
+            <a href="https://sneezy123.itch.io/projektkursinfo">
+                <i class="fab fa-itch-io">
+                </i>
+            </a>
+            <a href="mailto:msmprojektkursinfo@gmail.com">
+                <i class="fas fa-question">
+                </i>
+            </a>
+        </div>
     </footer>
-
 </body>
+
 </html>
