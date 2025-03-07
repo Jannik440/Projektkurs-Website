@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>
+        Credits
+    </title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <div class="overlay" id="login-form">
+        <form class="login-screen">
+            <h3>Entsperren</h3>
+            <div>
+                <label for="username">Benutzername</label>
+                <input type="text" id="username" placeholder="Benutzername eingeben" required>
+            </div>
+            <div>
+                <label for="password">Passwort</label>
+                <input type="password" id="password" placeholder="Passwort eingeben" required>
+            </div>
+            <p id="is-correct"></p>
+            <button type="button" id="button-login" onclick="Login()">Entsperren</button>
+            <button type="button" id="button-close-login" onclick="CloseLoginForm()">Schließen</button>
+        </form>
+    </div>
+
+    <header>
+        <img alt="Logo" height="50"
+            src="https://storage.googleapis.com/a1aa/image/RcZPlKue1D1kPyTdj464C8SWeGvssl7sofnjcMj3JksPfCtPB.jpg"
+            width="50" />
+        <nav class="navbar">
+            <ul>
+                <li>
+                    <a href="index.html#start">
+                        Start
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html#info">
+                        Infos
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html#contributors">
+                        Mitwirkende
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html#patchnotes">
+                        Patchnotes
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html#download">
+                        Download
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="icons">
+            <a href="https://github.com/Sneezy123/ProjektKursInfo"><i class="fab fa-github"></i></a>
+
+            <a href="https://sneezy123.itch.io/projektkursinfo"><i class="fab fa-itch-io"></i></a>
+            
+            <a href="javascript:void()" onclick="OpenLoginForm()"><i class="fas fa-key"></i></a>
+        </div>
+        <a class="menu-bars" href="javascript:void()" onclick="OpenMenuBar()"><i class="fas fa-bars"></i></a>
+    </header>
+
+    <div class="container">
+        <div class="section" id="add-new-patchnote">
+            <h2>Neue Patchnote hinzufügen</h2>
+            <form action="">
+                <div>
+                    <input type="text" id="patchnote-version" name="patchnote-version" placeholder="Version" required>
+                </div>
+                <div>
+                    <textarea rows="8" cols="1000" id="patchnote-description" name="patchnote-description" placeholder="Änderungen" maxlength="400" required></textarea>
+                </div>
+                <div class="buttons">
+                    <button type="submit" onclick="SendPatchnote()">Abschicken <i class="fas fa-paper-plane"></i></button>
+                    <button type="reset">Zurücksetzen</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="section" id="patchnotes">
+            <h2>
+                Patchnotes
+            </h2>
+            <div class="patchnotes-all">
+
+                <div class="patchnote recent-patch">
+                    <img alt="Patchnote Image" height="100"
+                        src="https://storage.googleapis.com/a1aa/image/sRb9uOUuQNKYNVJNoErP1nMBpfqBqIYAWYPQkhHZ3bv0Xo9JA.jpg"
+                        width="100" />
+                    <div class="patchnote-title">
+                        <h3>
+                            Alpha 1.11.1.n
+                        </h3>
+                        <p>
+                            Alpha version
+                        </p>
+                        <br>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
+                        </p>
+                        <br>
+                        
+                        <a href=""><span class="commit">
+                            See commit
+                            </span><i class="fas fa-arrow-up-right-from-square" ></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="patchnote">
+                    <img alt="Patchnote Image" height="100"
+                        src="https://storage.googleapis.com/a1aa/image/sRb9uOUuQNKYNVJNoErP1nMBpfqBqIYAWYPQkhHZ3bv0Xo9JA.jpg"
+                        width="100" />
+                    <div class="patchnote-title">
+                        <h3>
+                            Alpha 1.11.2.n
+                        </h3>
+                        <p>
+                            Alpha version
+                        </p>
+                        <br>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
+                        </p>
+                        <br>
+                        
+                        <a href="">
+                            <span class="commit">
+                                See commit
+                            </span>
+                            <i class="fas fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="patchnote">
+                    <img alt="Patchnote Image" height="100"
+                        src="https://storage.googleapis.com/a1aa/image/sRb9uOUuQNKYNVJNoErP1nMBpfqBqIYAWYPQkhHZ3bv0Xo9JA.jpg"
+                        width="100" />
+                    <div class="patchnote-title">
+                        <h3>
+                            Alpha 1.11.3.n
+                        </h3>
+                        <p>
+                            Alpha version
+                        </p>
+                        <br>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
+                        </p>
+                        <br>
+                        
+                        <a href="">
+                            <span class="commit">
+                                See commit
+                            </span>
+                            <i class="fas fa-arrow-up-right-from-square"></i>
+                        </a>
+
+                    </div>
+                </div>
+                <div class="patchnote">
+                    <img alt="Patchnote Image" height="100"
+                        src="https://storage.googleapis.com/a1aa/image/sRb9uOUuQNKYNVJNoErP1nMBpfqBqIYAWYPQkhHZ3bv0Xo9JA.jpg"
+                        width="100" />
+                    <div class="patchnote-title">
+                        <h3>
+                            Alpha 1.11.4.n
+                        </h3>
+                        <p>
+                            Alpha version
+                        </p>
+                        <br>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
+                        </p>
+                        <br>
+                        
+                        <a href="">
+                            <span class="commit">
+                                See commit
+                            </span>
+                            <i class="fas fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+    <footer>
+        <p>
+            &copy; MSM Projektkurs 2024
+        </p>
+        <p>
+            If you find any bugs, report them here:
+            <a href="https://github.com/Sneezy123/ProjektKursInfo/issues">
+                Report an Issue on GitHub
+            </a>
+        </p>
+        <div class="icons">
+            <a href="https://github.com/Sneezy123/ProjektKursInfo">
+                <i class="fab fa-github">
+                </i>
+            </a>
+            <a href="https://sneezy123.itch.io/projektkursinfo">
+                <i class="fab fa-itch-io">
+                </i>
+            </a>
+            <a href="mailto:msmprojektkursinfo@gmail.com">
+                <i class="fas fa-question">
+                </i>
+            </a>
+        </div>
+    </footer>
+</body>
+
+</html>
